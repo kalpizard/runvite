@@ -1,0 +1,98 @@
+.navigation {
+  display: flex;
+  background-color: rgb(72, 227, 90);
+  padding: 30px;
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navigation li {
+  margin-right: 15px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #fff; /* Cambiar el color del texto según tus preferencias */
+}
+
+.navigation a:hover {
+  color: #ddd; /* Cambiar el color del texto al pasar el ratón sobre el enlace */
+}
+
+
+
+.encabezado {
+ /* background-color: rgb(72, 227, 90); */
+background-image: url(components/imgs/clouds1.avif);
+width: 100%; /* O el ancho que desees */
+  height: 100%; /* O la altura que desees */
+ justify-content: center;
+ text-align: center;
+ margin-bottom: 30px;
+
+
+}
+
+.font{
+
+  display: flex;
+  justify-content: center;
+}
+
+ .titulo {
+ 
+  align-items: center;
+  color: rgb(76, 122, 215);
+  margin: 0;
+  font-family: 'MuseoModerno', sans-serif;
+  font-size: 300px;
+ 
+}
+
+.subtitulo {
+  
+  color: rgb(154, 59, 117);
+  font-size: 100px;
+  font-family: 'MuseoModerno', sans-serif;
+  display: inline; /* o display: inline-block; */
+}
+
+/* Agrega estos estilos en tu archivo de estilos CSS (puede ser en un archivo separado o en línea) */
+
+.button {
+
+  text-align: center; 
+  height: 200px;
+padding: 20px;
+ 
+}
+/* 
+.yo{
+  font-size: 50px
+} */
+
+.button button {
+  /* background-color: rgb(139, 69, 19); */
+  background-color: rgb(255, 1, 1);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 40px;
+  
+  height: 200px;
+  width: 200px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.register {
+  display: grid;
+  place-items: center; /* Centra ambos horizontal y verticalmente */
+  height: 30vh; /* 100% del viewport height para centrar verticalmente */
+  background-color: chartreuse;
+}
+
