@@ -60,3 +60,47 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+// myapp.jsx
+import React from 'react';
+import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
+function MyApp() {
+  return (
+
+
+
+
+
+
+
+    <Router>
+      <Routes>
+        <Route path="" element={
+            <div>
+              <User />
+           
+            </div>
+          }
+        />
+    
+        </Route>
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;

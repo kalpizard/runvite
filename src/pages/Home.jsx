@@ -1,19 +1,10 @@
-// // Home.js
+
+
+// // export default Home;
 // import React from "react";
+// import { useLocation, useNavigate } from "react-router-dom";
+// import Usado from '.components/Usado'
 
-// function Home() {
-//   return (
-//     <div>
-//       <h1>Home aquí</h1>
-//     </div>
-//   );
-// }
-
-// export default Home;
-
-// Home.js
-// import React from "react";
-// import { useLocation } from "react-router-dom";
 
 // function Home() {
 //   const location = useLocation();
@@ -21,26 +12,64 @@
 //   return (
 //     <div>
 //       <h1>Home aquí</h1>
-//       <p>Ruta actual: {location.pathname}</p>
+//       {/* Otro contenido del componente */}
+//       <Usado />
 //     </div>
 //   );
 // }
 
-// export default Home;
 
+
+
+// import React, { useState } from "react";
+
+// import Meta from "../components/NuevaMeta";
+
+// function Home = ({ meta, setMeta}) => {
+//   return (
+//     <header>
+//       <h1>Home aquí</h1>
+//       {/* Otro contenido del componente */}
+//       <Meta 
+//         meta={meta}
+//         setMeta={setMeta}
+//       />
+//     </header>
+//   );
+// }
+
+// Home.js
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import NuevaMeta from "../components/NuevaMeta";
+import ControlMetas from "../components/ControlMetas";
 
 
-function Home() {
-  const location = useLocation();
-
+const Home = ({
+  meta, 
+  setMeta,
+  isValidMeta,
+  setIsValidMeta 
+}) => {
   return (
-    <div>
+    <header>
       <h1>Home aquí</h1>
-      {/* <p>Ruta actual: {location.pathname}</p> */}
-    </div>
+      {isValidMeta ? (
+        <ControlMetas
+        meta={meta}
+        
+        
+        
+        />
+      ) : (
+        <NuevaMeta
+          meta={meta} 
+          setMeta={setMeta} 
+          isValidMeta={isValidMeta}
+          setIsValidMeta={setIsValidMeta}
+        />
+      )}
+    </header>
   );
-}
+};
 
 export default Home;
