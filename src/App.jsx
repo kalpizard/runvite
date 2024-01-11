@@ -9,13 +9,15 @@ import NavBar from "./components/NavBar";
 import User from "./components/User";
 import Stats from "./pages/Stats";
 import Home from "./pages/Home";
-import NuevaTarea from "../imgs/agregar.png";
+import NuevaTarea from "./imgs/agregar.png";
 
 function App() {
   const [meta, setMeta] = useState("");
   const [currUser, setCurrUser] = useState(null);
   const [isValidMeta, setIsValidMeta] = useState(false);
-
+  const handleNuevaTarea = () => {
+    console.log("click");
+  };
   return (
     <Router>
       <Routes>
@@ -43,7 +45,12 @@ function App() {
 
                 {isValidMeta && (
                   <div>
-                    <img className="agregarTareas" src={NuevaTarea} alt="icono tarea nueva" />
+                    <img
+                      className="agregarTareas"
+                      src={NuevaTarea}
+                      alt="icono tarea nueva"
+                      onClick={handleNuevaTarea}
+                    />
                   </div>
                 )}
 

@@ -28,7 +28,7 @@
 
 .encabezado {
  /* background-color: rgb(72, 227, 90); */
-background-image: url(../imgs/clouds1.avif);
+background-image: url(./imgs/clouds1.avif);
 width: 100%; /* O el ancho que desees */
   height: 100%; /* O la altura que desees */
  justify-content: center;
