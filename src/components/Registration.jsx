@@ -38,9 +38,14 @@ const Registration = () => {
   const [currUser, setCurrUser] = useState(null);
 
   return (
+    <fieldset>
+
+  
     <div className="App">
       <User currUser={currUser} setCurrUser={setCurrUser} />
     </div>
+
+    </fieldset>
   );
 };
 

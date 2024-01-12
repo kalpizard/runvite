@@ -38,6 +38,10 @@ const Login = ({setCurrUser, setShow}) =>{
   }
   return(
     <div>
+
+<fieldset>
+
+
       <form ref={formRef} onSubmit={handleSubmit}>
         Email: <input type="email" name='email' placeholder="email" />
         <br/>
@@ -45,8 +49,10 @@ const Login = ({setCurrUser, setShow}) =>{
         <br/>
         <input type='submit' value="Login" />
       </form>
+
+</fieldset>
       <br />
-      <div>Not registered yet, <a href="#signup" onClick={handleClick} >Signup</a> </div>
+      <div className="signup" >Not registered yet, <a href="#signup" onClick={handleClick} >Signup</a> </div>
     </div>
   )
 }
