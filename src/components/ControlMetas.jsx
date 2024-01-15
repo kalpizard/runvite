@@ -1,19 +1,16 @@
-
-
-
 // ControlMetas.js
 import React from "react";
-import meta from "../components/NuevaMeta"
-//META VIA PROPS PARA USAR META EN CONTROL DE METAS
+import NuevaMeta from "../components/NuevaMeta";
+
 const ControlMetas = ({ meta }) => {
   return (
-    <div className="">
+    <div className="contenedor-meta-dos-columnas">
       <div>
         <p>Barra de progreso</p>
       </div>
-      <div>
+      <div className="contenido-meta">
         <p>
-          <span>En progreso: </span> 
+          <span>En progreso: </span>
           {meta}
         </p>
       </div>
@@ -22,11 +19,6 @@ const ControlMetas = ({ meta }) => {
 };
 
 export default ControlMetas;
-
-
-
-
-
 
 
 

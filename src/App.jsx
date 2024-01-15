@@ -1,4 +1,4 @@
-// IMPORTACION USESTATE
+
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import User from "./components/User";
 import Stats from "./pages/Stats";
 import Home from "./pages/Home";
+import Options from "./pages/Options";
 import { generarId } from "./components/helpers";
 import ListadoTareas from "./components/ListadoTareas";
 
@@ -15,34 +16,53 @@ import Modal from "./components/Modal";
 import "./index.css";
 
 function App() {
-  //STATE META, SETMETA
+
+//STATE PARA DEFINIR NOMBRE DEL PERFIL DEL USUARIO 
+const [nombreUsuario, setNombreUsuario] = useState("");
+
+
+
+  // STATE PARA META Y SETMETA
   const [meta, setMeta] = useState("");
-  //STATE CURRUSER, SETCURRUSER
+  // STATE PARA CURRUSER Y SETCURRUSER
   const [currUser, setCurrUser] = useState(null);
-  //STATE PARA VALIDAR PRESUPUESTO, SE PASAN A HOME
+  // STATE PARA VALIDAR PRESUPUESTO, SE PASA A HOME
   const [isValidMeta, setIsValidMeta] = useState(false);
-  //STATE PARA MOSTRAR MODAL
+  // STATE PARA MOSTRAR MODAL
   const [modal, setModal] = useState(false);
-  //STATE PARA SETEAR TAREAS
+  // STATE PARA ANIMAR MODAL
+  const [animarModal, setAnimarModal] = useState(false);
+  // STATE PARA SETEAR TAREAS
   const [tareas, setTareas] = useState([]);
 
-  const handleNuevatarea= () => {
+  // FUNCION PARA AGREGAR ESTILO A MODAL CON TIEMPO
+  const handleNuevaTareaClick = () => {
     console.log("Diste click");
-    // MODAL CAMBIA A TRUE 
+    // MODAL CAMBIA A TRUE
     setModal(true);
-    document.body.classList.add("modal-active");
+
+    setTimeout(() => {
+      // Código que se ejecutará después de 5000 ms (5 segundos)
+      // document.body.classList.add("modal-active");
+      console.log("Animando modal");
+      setAnimarModal(true);
+    }, 5000);
   };
-// VALIDACION PARA NUEVAS TAREAS
+
+  // FUNCION PARA GUARDAR UNA NUEVA TAREA
   const guardarTarea = (tarea) => {
     tarea.id = generarId();
-    setTareas((prevTareas) => [...prevTareas, tarea]);
-  };
+    tarea.fecha = Date.now();
+    // console.log("ID de nueva tarea:", tarea.id);
+    setTareas([...tareas, tarea]);
 
-  const closeModal = () => {
-    setModal(false);
-    document.body.classList.remove("modal-active");
-  };
+    // FUNCION PARA CERRAR EL MODAL DESPUÉS DE CIERTO TIEMPO
+    setAnimarModal(false);
 
+    setTimeout(() => {
+      setModal(false);
+    }, 5000);
+  };
   return (
     <Router>
       <Routes>
@@ -60,8 +80,11 @@ function App() {
           <Route
             path="home"
             element={
-              // DIV DEL HOME
               <div>
+
+
+
+
                 
                 <Home
                   meta={meta}
@@ -69,7 +92,6 @@ function App() {
                   isValidMeta={isValidMeta}
                   setIsValidMeta={setIsValidMeta}
                 />
-                {/* CUANDO SE VALIDO SE EJECUTA EL CODIGO */}
                 {isValidMeta && (
                   <>
                     <main>
@@ -88,7 +110,7 @@ function App() {
                         fill="none"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        onClick={handleNuevatarea}
+                        onClick={handleNuevaTareaClick}
                       >
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M12 5l0 14" />
@@ -98,7 +120,12 @@ function App() {
                   </>
                 )}
                 {modal && (
-                  <Modal setModal={setModal} guardarTarea={guardarTarea} />
+                  <Modal
+                    setModal={setModal}
+                    guardarTarea={guardarTarea}
+                    animarModal={animarModal}
+                    setAnimarModal={setAnimarModal}
+                  />
                 )}
                 <Exit />
               </div>
@@ -110,6 +137,21 @@ function App() {
               <div>
                 <Stats />
                 <Exit />
+              </div>
+            }
+          />
+          <Route
+            path="options"
+            element={
+              <div>
+                <h1>
+
+             <Options
+             
+             nombreUsuario={nombreUsuario}
+             setNombreUsuario={setNombreUsuario}
+             />
+                </h1>
               </div>
             }
           />

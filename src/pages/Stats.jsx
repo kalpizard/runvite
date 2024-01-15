@@ -10,7 +10,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 function Stats() {
   return (
-    <div>
+    <div className="stats">
       <h1>Stats aquí</h1>
     </div>
   );
