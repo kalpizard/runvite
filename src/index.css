@@ -104,7 +104,7 @@ header {
 .exit_button {
   position: fixed; /* Establece la posición fija para que se mantenga en su lugar incluso al hacer scroll */
   bottom: 10px; /* Ajusta la distancia desde la parte inferior de la pantalla */
-  left: 10px; /* Ajusta la distancia desde el borde izquierdo de la pantalla */
+  left: 80px; /* Ajusta la distancia desde el borde izquierdo de la pantalla */
   cursor: pointer; /* Indica que el elemento es interactivo */
 }
 
@@ -124,22 +124,6 @@ fieldset {
 .stats {
   background-color: beige;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
