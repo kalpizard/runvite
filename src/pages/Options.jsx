@@ -6,7 +6,8 @@ import React from "react";
 import Profile from "../components/Profile";
 import Modes from "../components/Modes";
 
-const Options = ({ nombreUsuario, setNombreUsuario }) => {
+const Options = ({ nombreUsuario,
+   setNombreUsuario }) => {
   return (
    <div>
 

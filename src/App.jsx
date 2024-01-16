@@ -1,3 +1,4 @@
+// App.js
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -15,44 +16,27 @@ import Modal from "./components/Modal";
 import "./index.css";
 
 function App() {
-  // STATE PARA DEFINIR NOMBRE DEL PERFIL DEL USUARIO
   const [nombreUsuario, setNombreUsuario] = useState("");
-
-  // STATE PARA META Y SETMETA
   const [meta, setMeta] = useState("");
-  // STATE PARA CURRUSER Y SETCURRUSER
   const [currUser, setCurrUser] = useState(null);
-  // STATE PARA VALIDAR PRESUPUESTO, SE PASA A HOME
   const [isValidMeta, setIsValidMeta] = useState(false);
-  // STATE PARA MOSTRAR MODAL
   const [modal, setModal] = useState(false);
-  // STATE PARA ANIMAR MODAL
   const [animarModal, setAnimarModal] = useState(false);
-  // STATE PARA SETEAR TAREAS
   const [tareas, setTareas] = useState([]);
 
-  // FUNCION PARA AGREGAR ESTILO A MODAL CON TIEMPO
   const handleNuevaTareaClick = () => {
-    console.log("Diste click");
-    // MODAL CAMBIA A TRUE
     setModal(true);
 
     setTimeout(() => {
-      // Código que se ejecutará después de 5000 ms (5 segundos)
-      // document.body.classList.add("modal-active");
-      console.log("Animando modal");
       setAnimarModal(true);
     }, 5000);
   };
 
-  // FUNCION PARA GUARDAR UNA NUEVA TAREA
   const guardarTarea = (tarea) => {
     tarea.id = generarId();
     tarea.fecha = Date.now();
-    // console.log("ID de nueva tarea:", tarea.id);
     setTareas([...tareas, tarea]);
 
-    // FUNCION PARA CERRAR EL MODAL DESPUÉS DE CIERTO TIEMPO
     setAnimarModal(false);
 
     setTimeout(() => {
@@ -62,8 +46,6 @@ function App() {
 
   return (
     <>
-      {/* <div className={modal && 'fijar'}></div> */}
-
       <Router>
         <Routes>
           <Route
@@ -86,6 +68,8 @@ function App() {
                     setMeta={setMeta}
                     isValidMeta={isValidMeta}
                     setIsValidMeta={setIsValidMeta}
+                    nombreUsuario={nombreUsuario}
+                    setNombreUsuario={setNombreUsuario}
                   />
                   {isValidMeta && (
                     <>
@@ -141,8 +125,8 @@ function App() {
                 <div>
                   <h1>
                     <Options
-                      nombreUsuario={nombreUsuario}
-                      setNombreUsuario={setNombreUsuario}
+                       nombreUsuario={nombreUsuario}
+                       setNombreUsuario={setNombreUsuario}
                     />
                   </h1>
                 </div>
@@ -156,6 +140,16 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
 
 
 
