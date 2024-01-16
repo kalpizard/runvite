@@ -1,16 +1,20 @@
 
 import React from "react";
-import Tarea from "./Tarea";
+import Tarea from "../components/Tarea";
 
-const ListadoTareas = ({ tareas }) => {
+const ListadoTareas = ({ tareas, setTareaEditar }) => {
   return (
     <div className="">
       <h2>{tareas.length ? 'Tareas' : 'No Hay Tarea'}</h2>
       
       {tareas.map(tarea => (
         <Tarea 
+
         key={tarea.id}
-         tarea={tarea} 
+         tarea={tarea}
+        //  SE LE APLICA A CADA UNA DE LAS TAREAS 
+         setTareaEditar={setTareaEditar}
+         
          />
       ))}
     </div>

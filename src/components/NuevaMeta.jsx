@@ -46,9 +46,9 @@ const NuevaMeta = ({
             onChange={(e) => setNombreUsuario(String(e.target.value))}
           />
 
-          <p className="fecha-gasto">
+          {/* <p className="fecha-gasto">
             Agregado el: <span>{formatearFecha(fecha)}</span>
-          </p>
+          </p> */}
         </div>
 
         <div className="campo">
@@ -61,9 +61,9 @@ const NuevaMeta = ({
             value={meta}
             onChange={(e) => setMeta(String(e.target.value))}
           />
-          <p className="fecha-gasto">
+          {/* <p className="fecha-gasto">
             Agregado el: <span>{formatearFecha(fecha)}</span>
-          </p>
+          </p> */}
         </div>
 
         <input type="submit" value="Añadir" />

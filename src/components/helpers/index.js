@@ -8,6 +8,9 @@ export const generarId = () => {
 
 
 
+
+
+  
   export const formatearFecha = fecha => {
 
 const fechaMeta = new Date(fecha);
