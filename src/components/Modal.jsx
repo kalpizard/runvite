@@ -99,7 +99,7 @@ const Modal = ({
         onSubmit={handleSubmit}
         className={`formulario ${animarModal ? "animar" : "cerrar"}`}
       >
-        <legend>Alguna nueva tarea</legend>
+        <legend>{tareaEditar.nombre ? 'Editar tarea' : 'Alguna nueva tarea'}</legend>
         <div className="campo">
           <label htmlFor="Nombre de la tarea">Tareas</label>
           <input
@@ -133,7 +133,11 @@ const Modal = ({
             onChange={(e) => handleDescripcionChange(e)}
           />
         </div>
-        <input type="submit" value="Añadir" />
+        <input 
+             type="submit"
+             value={tareaEditar.nombre ? 'Guardar tarea' : 'Añade nueva tarea'}
+             
+              />
       </form>
       {mensaje && <p>{mensaje}</p>}
     </div>
