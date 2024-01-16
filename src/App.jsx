@@ -12,6 +12,7 @@ import ListadoTareas from "./components/ListadoTareas";
 import Modal from "./components/Modal";
 import { generarId } from "./components/helpers";
 import "./index.css";
+import Tarea from "./components/Tarea";
 
 function App() {
   const [nombreUsuario, setNombreUsuario] = useState("");
@@ -51,9 +52,25 @@ function App() {
   };
 
   const guardarTarea = (tarea) => {
+    console.log('TAREA');
+
+  if (tarea.id){
+
+    const tareasActualizadas = tareas.map(tareaState => 
+      tareaState.id === tarea.id ? tarea : tareaState);
+      setTareas(tareasActualizadas)
+//actualizar
+
+  } else {
+
+
     tarea.id = generarId();
     tarea.fecha = Date.now();
     setTareas([...tareas, tarea]);
+
+  }
+
+
 
     setAnimarModal(false);
 

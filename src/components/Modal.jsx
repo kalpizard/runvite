@@ -14,13 +14,23 @@ const Modal = ({
   const [dificultad, setDificultad] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [mensaje, setMensaje] = useState("");
+//NUEVO STATE PARA CUANDO EDITA O CREA 
+
+const [id, setId] = useState("");
+
+
+
+
+
+
+
 
   useEffect(() => {
     if (Object.keys(tareaEditar).length > 0) {
       setNombre(tareaEditar.nombre)
       setDificultad(tareaEditar.dificultad)
       setDescripcion(tareaEditar.descripcion)
-      // Tu lógica aquí
+      setId(tareaEditar.id)
     }
   }, []);
 
@@ -63,6 +73,7 @@ const Modal = ({
       nombre,
       dificultad,
       descripcion,
+      id
     });
 
     setNombre("");
