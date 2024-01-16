@@ -1,5 +1,8 @@
-// Tarea.jsx
+
+//USADO ANTERIORMENTE
+// // Tarea.jsx
 import React from "react";
+
 import {
   LeadingActions,
   SwipeableList,
@@ -66,7 +69,6 @@ const Tarea = ({ tarea, setTareaEditar }) => {
 };
 
 export default Tarea;
-
 
 
 
