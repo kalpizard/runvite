@@ -7,7 +7,9 @@ import Profile from "../components/Profile";
 import Modes from "../components/Modes";
 
 const Options = ({ nombreUsuario,
-   setNombreUsuario }) => {
+   setNombreUsuario,
+
+ }) => {
   return (
    <div>
 

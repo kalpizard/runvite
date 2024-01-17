@@ -11,13 +11,20 @@ const Home = ({
   setIsValidMeta,
   nombreUsuario,
   setNombreUsuario,
+  setTareas
 }) => {
   return (
     <header>
       <h1>PLANIFICA TU META CON VROAD</h1>
       {isValidMeta ? (
         <div>
-          <ControlMetas meta={meta} />
+          <ControlMetas
+           tareas={setTareas}
+           setTareas={setTareas}
+           meta={meta} 
+           setMeta={setMeta}
+           setIsValidMeta={setIsValidMeta}
+           />
         </div>
       ) : (
         <NuevaMeta

@@ -135,6 +135,8 @@ setTareaEditar({});
                     setIsValidMeta={setIsValidMeta}
                     nombreUsuario={nombreUsuario}
                     setNombreUsuario={setNombreUsuario}
+                    tareas={tareas}
+                    setTareas={setTareas}
                   />
                   {isValidMeta && (
                     <>
@@ -220,6 +222,9 @@ setTareaEditar({});
                 <div>
                   <h1>
                     <Options
+                    tareas={tareas}
+                    setTareas={setTareas}
+                
                       nombreUsuario={nombreUsuario}
                       setNombreUsuario={setNombreUsuario}
                     />
