@@ -1,6 +1,8 @@
 
-import { useRef } from "react"
+import { useRef } from "react";
+import { useNavigate } from 'react-router-dom';
 const Login = ({setCurrUser, setShow}) =>{
+  const navigate = useNavigate();
   const formRef=useRef()
   const login=async (userInfo, setCurrUser)=>{
     const url="http://localhost:3000/login"
@@ -31,6 +33,8 @@ const Login = ({setCurrUser, setShow}) =>{
       }
       login(userInfo, setCurrUser)
       e.target.reset()
+
+      navigate('/navbar/home')
   }
   const handleClick=e=>{
     e.preventDefault()

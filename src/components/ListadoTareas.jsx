@@ -7,23 +7,48 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
     <div className="">
       <h2>{tareas.length ? "Tareas" : "No Hay Tarea"}</h2>
 
-      {Array.isArray(tareas) && tareas.length > 0 ? (
-        tareas.map((tarea) => (
-          <Tarea
-            key={tarea.id}
-            tarea={tarea}
-            setTareaEditar={setTareaEditar}
-            eliminarTarea={eliminarTarea}
-          />
-        ))
-      ) : (
-        <p>No hay tareas disponibles.</p>
-      )}
+      {Array.isArray(tareas) && tareas.length > 0
+        ? tareas.map((tarea) => (
+            <Tarea
+              key={tarea.id}
+              tarea={tarea}
+              setTareaEditar={setTareaEditar}
+              eliminarTarea={eliminarTarea}
+            />
+          ))
+        : null}
     </div>
   );
 };
 
 export default ListadoTareas;
+
+// // ListadoTareas.jsx
+// import React from "react";
+// import Tarea from "../components/Tarea";
+
+// const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
+//   return (
+//     <div className="">
+//       <h2>{tareas.length ? "Tareas" : "No Hay Tarea"}</h2>
+
+//       {Array.isArray(tareas) && tareas.length > 0 ? (
+//         tareas.map((tarea) => (
+//           <Tarea
+//             key={tarea.id}
+//             tarea={tarea}
+//             setTareaEditar={setTareaEditar}
+//             eliminarTarea={eliminarTarea}
+//           />
+//         ))
+//       ) : (
+//         <p>No hay tareas disponibles.</p>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default ListadoTareas;
 
 //FUNCIONA EN EL BORRRRRAR
 // // ListadoTareas.jsx
