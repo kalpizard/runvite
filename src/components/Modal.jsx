@@ -10,6 +10,7 @@ const Modal = ({
   setAnimarModal,
   guardarTarea,
   tareaEditar,
+  setTareaEditar
 }) => {
   const [nombre, setNombre] = useState("");
   const [dificultad, setDificultad] = useState("");
@@ -29,6 +30,7 @@ const Modal = ({
   }, []);
 
   const closeModal = () => {
+    setTareaEditar({})
     setAnimarModal(false);
     setTimeout(() => {
       setModal(false);

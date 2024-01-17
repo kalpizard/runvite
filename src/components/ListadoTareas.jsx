@@ -3,7 +3,7 @@
 import React from "react";
 import Tarea from "../components/Tarea";
 
-const ListadoTareas = ({ tareas, setTareaEditar }) => {
+const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
   return (
     <div className="">
       <h2>{tareas.length ? 'Tareas' : 'No Hay Tarea'}</h2>
@@ -13,6 +13,7 @@ const ListadoTareas = ({ tareas, setTareaEditar }) => {
           key={tarea.id}
           tarea={tarea}
           setTareaEditar={setTareaEditar}
+          eliminarTarea={eliminarTarea}
         />
       ))}
     </div>

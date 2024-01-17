@@ -22,8 +22,12 @@ const diccionarioIconos = {
   3: Icono3,
 };
 
-const Tarea = ({ tarea, setTareaEditar }) => {
-  const { dificultad, nombre, descripcion, fecha } = tarea;
+const Tarea = ({ 
+  tarea,
+   setTareaEditar,
+   eliminarTarea
+   }) => {
+  const { dificultad, nombre, descripcion, id, fecha } = tarea;
 
   return (
     // Move SwipeableList outside the Tarea component to avoid unnecessary re-rendering
@@ -32,8 +36,13 @@ const Tarea = ({ tarea, setTareaEditar }) => {
         leadingActions={
           <LeadingActions>
             {/* Use an anonymous arrow function to pass arguments to the onClick handler */}
-            <SwipeAction onClick={() => console.log("eliminar")}>
-              eliminar
+            <SwipeAction onClick={() => eliminarTarea(id)}
+            
+            destructive={true}
+            
+            >
+          
+
             </SwipeAction>
           </LeadingActions>
         }

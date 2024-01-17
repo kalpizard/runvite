@@ -37,15 +37,15 @@ function App() {
     }, 1000);
   }, [tareaEditar]);
 
-// Uncomment the function
-const handleNuevaTareaClick = () => {
-  setModal(true);
-  setTareaEditar({});
+  // Uncomment the function
+  const handleNuevaTareaClick = () => {
+    setModal(true);
+    setTareaEditar({});
 
-  setTimeout(() => {
-    setAnimarModal(true);
-  }, 1000);
-};
+    setTimeout(() => {
+      setAnimarModal(true);
+    }, 1000);
+  };
 
   const guardarTarea = (tarea) => {
     if (tarea.id) {
@@ -54,6 +54,9 @@ const handleNuevaTareaClick = () => {
         tareaSate.id === tarea.id ? tarea : tareaSate
       );
       setTareas(tareasActualizadas);
+setTareaEditar({});
+
+
     } else {
       tarea.id = generarId();
       tarea.fecha = Date.now();
@@ -65,6 +68,13 @@ const handleNuevaTareaClick = () => {
     setTimeout(() => {
       setModal(false);
     }, 5000);
+  };
+
+  const eliminarTarea = (id) => {
+    // console.log('eliminando', id);
+    const tareasActualizadas = tareas.filter((tarea) => tarea.id !== id);
+    //  console.log(tareasActualizadas);
+    setTareas(tareasActualizadas);
   };
 
   return (
@@ -100,6 +110,7 @@ const handleNuevaTareaClick = () => {
                         <ListadoTareas
                           tareas={tareas}
                           setTareaEditar={setTareaEditar}
+                          eliminarTarea={eliminarTarea}
                         />
                       </main>
                       <div>
@@ -150,6 +161,7 @@ const handleNuevaTareaClick = () => {
                       animarModal={animarModal}
                       setAnimarModal={setAnimarModal}
                       tareaEditar={tareaEditar}
+                      setTareaEditar={setTareaEditar}
                     />
                   )}
                   <Exit />
@@ -191,3 +203,130 @@ const handleNuevaTareaClick = () => {
 }
 
 export default App;
+
+// EL FUNCIONA!!!!!!!!!!
+//   return (
+//     <>
+//       <Router>
+//         <Routes>
+//           <Route
+//             path="/"
+//             element={
+//               <div>
+//                 <Header />
+//                 <StartButton />
+//                 <User currUser={currUser} setCurrUser={setCurrUser} />
+//               </div>
+//             }
+//           />
+//           <Route path="/navbar/*" element={<NavBar />}>
+//             <Route
+//               path="home"
+//               element={
+//                 <div>
+//                   <Home
+//                     meta={meta}
+//                     setMeta={setMeta}
+//                     isValidMeta={isValidMeta}
+//                     setIsValidMeta={setIsValidMeta}
+//                     nombreUsuario={nombreUsuario}
+//                     setNombreUsuario={setNombreUsuario}
+//                   />
+//                   {isValidMeta && (
+//                     <>
+//                       <main>
+//                         <ListadoTareas
+//                           tareas={tareas}
+//                           setTareaEditar={setTareaEditar}
+//                           eliminarTarea={eliminarTarea}
+//                         />
+//                       </main>
+//                       <div>
+//                         <svg
+//                           xmlns="http://www.w3.org/2000/svg"
+//                           className="agregarTareas"
+//                           width="100"
+//                           height="100"
+//                           viewBox="0 0 24 24"
+//                           strokeWidth="3"
+//                           stroke="#009988"
+//                           fill="none"
+//                           strokeLinecap="round"
+//                           strokeLinejoin="round"
+//                           onClick={handleNuevaTareaClick}
+//                         >
+//                           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+//                           <path d="M12 5l0 14" />
+//                           <path d="M5 12l14 0" />
+//                         </svg>
+//                       </div>
+
+//                       {/* <div>
+//                         <svg
+//                           xmlns="http://www.w3.org/2000/svg"
+//                           className="agregarTareas"
+//                           width="100"
+//                           height="100"
+//                           viewBox="0 0 24 24"
+//                           strokeWidth="3"
+//                           stroke="#009988"
+//                           fill="none"
+//                           strokeLinecap="round"
+//                           strokeLinejoin="round"
+//                           onClick={handleNuevaTareaClick}
+//                         >
+//                           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+//                           <path d="M12 5l0 14" />
+//                           <path d="M5 12l14 0" />
+//                         </svg>
+//                       </div> */}
+//                     </>
+//                   )}
+//                   {modal && (
+//                     <Modal
+//                       setModal={setModal}
+//                       guardarTarea={guardarTarea}
+//                       animarModal={animarModal}
+//                       setAnimarModal={setAnimarModal}
+//                       tareaEditar={tareaEditar}
+//                     />
+//                   )}
+//                   <Exit />
+//                 </div>
+//               }
+//             />
+//             <Route
+//               path="stats"
+//               element={
+//                 <div>
+//                   {/* Pass the creation date to the Stats component */}
+//                   <Stats
+//                     fecha={
+//                       tareas.length > 0 ? tareas[tareas.length - 1].fecha : null
+//                     }
+//                   />
+//                   <Exit />
+//                 </div>
+//               }
+//             />
+//             <Route
+//               path="options"
+//               element={
+//                 <div>
+//                   <h1>
+//                     <Options
+//                       nombreUsuario={nombreUsuario}
+//                       setNombreUsuario={setNombreUsuario}
+//                     />
+//                   </h1>
+//                 </div>
+//               }
+//             />
+//           </Route>
+//         </Routes>
+//       </Router>
+//     </>
+//   );
+// }
+
+// export default App;
