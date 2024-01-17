@@ -23,7 +23,7 @@ const Modal = ({
       setDificultad(tareaEditar.dificultad);
       setDescripcion(tareaEditar.descripcion);
       setId(tareaEditar.id);
-      setFecha(tareaEditar.fecha)
+      // setFecha(tareaEditar.fecha);
       // Tu lógica aquí
     }
   }, []);
@@ -67,8 +67,8 @@ const Modal = ({
       nombre,
       dificultad,
       descripcion,
-      id, 
-      fecha
+      id,
+   
     });
 
     setNombre("");
@@ -150,6 +150,17 @@ const Modal = ({
 };
 
 export default Modal;
+
+
+
+
+
+
+
+
+
+
+
 
 // //USADO ANTERIORMENTE
 // // // Modal.jsx

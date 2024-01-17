@@ -30,60 +30,41 @@ function App() {
   const [tareaEditar, setTareaEditar] = useState({});
 
   useEffect(() => {
-   if ( Object.keys(tareaEditar).length > 0)
-   setModal(true);
-
-   
-   
-       setTimeout(() => {
-         setAnimarModal(true);
-       }, 1000);
-  }, [tareaEditar]);
-
-  //USADO ANTERIORMENTE
-  // useEffect(() => {
-  //   console.log("tareaEditar:", tareaEditar);
-  //   if (Object.keys(tareaEditar).length > 0) {
-
-  //     handleNuevaTareaClick();
-  //     console.log("componente");
-  //   }
-  // }, [tareaEditar]);
-
-  const handleNuevaTareaClick = () => {
-    setModal(true);
-setTareaEditar({})
-
+    if (Object.keys(tareaEditar).length > 0) setModal(true);
 
     setTimeout(() => {
       setAnimarModal(true);
     }, 1000);
-  };
+  }, [tareaEditar]);
+
+// Uncomment the function
+const handleNuevaTareaClick = () => {
+  setModal(true);
+  setTareaEditar({});
+
+  setTimeout(() => {
+    setAnimarModal(true);
+  }, 1000);
+};
 
   const guardarTarea = (tarea) => {
-    
-    if(tarea.id){
+    if (tarea.id) {
       //actualizar
-const tareasActualizadas = tareas.map(tareaSate => 
-  tareaSate.id === tarea.id ? tarea : tareaSate)
-  setTareas(tareasActualizadas);
-
+      const tareasActualizadas = tareas.map((tareaSate) =>
+        tareaSate.id === tarea.id ? tarea : tareaSate
+      );
+      setTareas(tareasActualizadas);
     } else {
-
-
       tarea.id = generarId();
       tarea.fecha = Date.now();
       setTareas([...tareas, tarea]);
-
     }
-
 
     setAnimarModal(false);
 
     setTimeout(() => {
       setModal(false);
     }, 5000);
-
   };
 
   return (
@@ -121,7 +102,6 @@ const tareasActualizadas = tareas.map(tareaSate =>
                           setTareaEditar={setTareaEditar}
                         />
                       </main>
-
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -141,6 +121,26 @@ const tareasActualizadas = tareas.map(tareaSate =>
                           <path d="M5 12l14 0" />
                         </svg>
                       </div>
+
+                      {/* <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="agregarTareas"
+                          width="100"
+                          height="100"
+                          viewBox="0 0 24 24"
+                          strokeWidth="3"
+                          stroke="#009988"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          onClick={handleNuevaTareaClick}
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <path d="M12 5l0 14" />
+                          <path d="M5 12l14 0" />
+                        </svg>
+                      </div> */}
                     </>
                   )}
                   {modal && (
