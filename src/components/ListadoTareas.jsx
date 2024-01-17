@@ -1,4 +1,3 @@
-
 // ListadoTareas.jsx
 import React from "react";
 import Tarea from "../components/Tarea";
@@ -6,52 +5,49 @@ import Tarea from "../components/Tarea";
 const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
   return (
     <div className="">
-      <h2>{tareas.length ? 'Tareas' : 'No Hay Tarea'}</h2>
-      
-      {tareas.map(tarea => (
-        <Tarea 
-          key={tarea.id}
-          tarea={tarea}
-          setTareaEditar={setTareaEditar}
-          eliminarTarea={eliminarTarea}
-        />
-      ))}
+      <h2>{tareas.length ? "Tareas" : "No Hay Tarea"}</h2>
+
+      {Array.isArray(tareas) && tareas.length > 0 ? (
+        tareas.map((tarea) => (
+          <Tarea
+            key={tarea.id}
+            tarea={tarea}
+            setTareaEditar={setTareaEditar}
+            eliminarTarea={eliminarTarea}
+          />
+        ))
+      ) : (
+        <p>No hay tareas disponibles.</p>
+      )}
     </div>
   );
 };
 
 export default ListadoTareas;
 
+//FUNCIONA EN EL BORRRRRAR
+// // ListadoTareas.jsx
+// import React from "react";
+// import Tarea from "../components/Tarea";
 
+// const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
+//   return (
+//     <div className="">
+//       <h2>{tareas.length ? 'Tareas' : 'No Hay Tarea'}</h2>
 
+//       {tareas.map(tarea => (
+//         <Tarea
+//           key={tarea.id}
+//           tarea={tarea}
+//           setTareaEditar={setTareaEditar}
+//           eliminarTarea={eliminarTarea}
+//         />
+//       ))}
+//     </div>
+//   );
+// };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// export default ListadoTareas;
 
 //antes
 // import React from "react";
@@ -61,15 +57,15 @@ export default ListadoTareas;
 //   return (
 //     <div className="">
 //       <h2>{tareas.length ? 'Tareas' : 'No Hay Tarea'}</h2>
-      
+
 //       {tareas.map(tarea => (
-//         <Tarea 
+//         <Tarea
 
 //         key={tarea.id}
 //          tarea={tarea}
-//         //  SE LE APLICA A CADA UNA DE LAS TAREAS 
+//         //  SE LE APLICA A CADA UNA DE LAS TAREAS
 //          setTareaEditar={setTareaEditar}
-         
+
 //          />
 //       ))}
 //     </div>
@@ -77,37 +73,6 @@ export default ListadoTareas;
 // };
 
 // export default ListadoTareas;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from "react";
 

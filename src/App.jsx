@@ -1,5 +1,3 @@
-//USADO ANTERIORMENTE
-
 // App.js
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -20,12 +18,18 @@ import { object } from "prop-types";
 
 function App() {
   const [nombreUsuario, setNombreUsuario] = useState("");
-  const [meta, setMeta] = useState("");
+  const [meta, setMeta] = useState(localStorage.getItem('meta') ?? '');
   const [currUser, setCurrUser] = useState(null);
   const [isValidMeta, setIsValidMeta] = useState(false);
   const [modal, setModal] = useState(false);
   const [animarModal, setAnimarModal] = useState(false);
-  const [tareas, setTareas] = useState([]);
+  const [tareas, setTareas] = useState(
+
+localStorage.getItem('tareas') ? JSON.parse
+(localStorage.getItem('tareas') ) : []
+
+
+  );
   const [fecha, setFecha] = useState([]);
   const [tareaEditar, setTareaEditar] = useState({});
 
@@ -36,6 +40,24 @@ function App() {
       setAnimarModal(true);
     }, 1000);
   }, [tareaEditar]);
+
+  // LOCAL_STORAGE_META
+  useEffect(() => {
+    // Save the current value of 'meta' to localStorage
+    localStorage.setItem('meta', meta ?? '');
+  }, [meta]);
+  
+  //LOCAL_STORAGE_TAREA
+  useEffect (()=> {
+
+localStorage.setItem('tareas', JSON.stringify(tareas) ?? []);
+  },[tareas])
+
+
+  useEffect(() => {
+    const metaLS = localStorage.getItem('meta');
+    setIsValidMeta(metaLS !== null);
+  }, []);
 
   // Uncomment the function
   const handleNuevaTareaClick = () => {
@@ -69,6 +91,16 @@ setTareaEditar({});
       setModal(false);
     }, 5000);
   };
+
+
+
+
+
+
+
+
+
+  
 
   const eliminarTarea = (id) => {
     // console.log('eliminando', id);
@@ -203,6 +235,20 @@ setTareaEditar({});
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // EL FUNCIONA!!!!!!!!!!
 //   return (
