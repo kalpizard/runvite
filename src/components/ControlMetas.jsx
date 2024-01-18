@@ -5,7 +5,9 @@ const ControlMetas = ({
   tareas,
   setTareas,
   setMeta, // Asegúrate de que setMetas se pasa como prop
-  setIsValidMeta
+  setIsValidMeta,
+  nombreUsuario,
+  setNombreUsuario
 }) => {
   const handleResetApp = () => {
     const resultado = window.confirm("¿VOLVER A COMENZAR?");
@@ -13,6 +15,7 @@ const ControlMetas = ({
       setTareas([]);
       setMeta("");
       setIsValidMeta(false);
+      setNombreUsuario("");
     }
   };
 

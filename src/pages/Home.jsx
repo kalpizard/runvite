@@ -19,6 +19,8 @@ const Home = ({
       {isValidMeta ? (
         <div>
           <ControlMetas
+          nombreUsuario={nombreUsuario}
+          setNombreUsuario={setNombreUsuario}
            tareas={setTareas}
            setTareas={setTareas}
            meta={meta} 
