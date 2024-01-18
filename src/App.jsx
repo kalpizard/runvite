@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 // App.js
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -246,11 +257,19 @@ setTareaEditar({});
                 <div>
                   <h1>
                     <Options
+                        meta={meta}
+                    setMeta={setMeta}
+                    isValidMeta={isValidMeta}
+                    setIsValidMeta={setIsValidMeta}
+                    nombreUsuario={nombreUsuario}
+                    setNombreUsuario={setNombreUsuario}
                     tareas={tareas}
                     setTareas={setTareas}
+                    // tareas={tareas}
+                    // setTareas={setTareas}
                 
-                      nombreUsuario={nombreUsuario}
-                      setNombreUsuario={setNombreUsuario}
+                    //   nombreUsuario={nombreUsuario}
+                    //   setNombreUsuario={setNombreUsuario}
                     />
                   </h1>
                 </div>
