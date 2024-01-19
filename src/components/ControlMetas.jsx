@@ -7,7 +7,11 @@ const ControlMetas = ({
   setMeta, // Asegúrate de que setMetas se pasa como prop
   setIsValidMeta,
   nombreUsuario,
+<<<<<<< HEAD
   setNombreUsuario
+=======
+  setNombreUsuario,
+>>>>>>> ee4f3442e8afab4a958c8ba4700c908979a4ce30
 }) => {
   const handleResetApp = () => {
     const resultado = window.confirm("¿VOLVER A COMENZAR?");
@@ -15,10 +19,25 @@ const ControlMetas = ({
       setTareas([]);
       setMeta("");
       setIsValidMeta(false);
+<<<<<<< HEAD
       setNombreUsuario("");
       localStorage.clear();
+=======
+      // Restablece a un string vacío en lugar de false
+>>>>>>> ee4f3442e8afab4a958c8ba4700c908979a4ce30
     }
   };
+  // const handleResetApp = () => {
+  //   const resultado = window.confirm("¿VOLVER A COMENZAR?");
+  //   if (resultado) {
+  //     setTareas([]);
+  //     setMeta("");
+  //     setIsValidMeta(false);
+  //     setNombreUsuario(false);
+  //     nombreUsuario=("")
+
+  //   }
+  // };
 
   return (
     <div className="contenedor-meta-dos-columnas">
