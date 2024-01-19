@@ -10,13 +10,16 @@ const Modal = ({
   setAnimarModal,
   guardarTarea,
   tareaEditar,
-  setTareaEditar
+  setTareaEditar,
 }) => {
   const [nombre, setNombre] = useState("");
   const [dificultad, setDificultad] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [mensaje, setMensaje] = useState("");
   const [id, setId] = useState("");
+  const [currUser, setCurrUser] = useState(
+    localStorage.getItem("token") ?? ""
+  );
 
   useEffect(() => {
     if (Object.keys(tareaEditar).length > 0) {
@@ -30,7 +33,7 @@ const Modal = ({
   }, []);
 
   const closeModal = () => {
-    setTareaEditar({})
+    setTareaEditar({});
     setAnimarModal(false);
     setTimeout(() => {
       setModal(false);
@@ -70,7 +73,6 @@ const Modal = ({
       dificultad,
       descripcion,
       id,
-   
     });
 
     setNombre("");
@@ -81,7 +83,14 @@ const Modal = ({
   };
 
   return (
-    <div className="modal">
+    <div>
+      {currUser ? (
+        // Estructura que se muestra cuando mostrarEstructura es true
+        <h1>Hay alguien loggeado</h1>
+
+        
+      ) : (
+        <div className="modal">
       <div className="close-modal" style={{ textAlign: "right" }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -148,21 +157,14 @@ const Modal = ({
       </form>
       {mensaje && <p>{mensaje}</p>}
     </div>
+      )}
+    </div>
+
+    
   );
 };
 
 export default Modal;
-
-
-
-
-
-
-
-
-
-
-
 
 // //USADO ANTERIORMENTE
 // // // Modal.jsx

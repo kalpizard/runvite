@@ -16,6 +16,7 @@ const ControlMetas = ({
       setMeta("");
       setIsValidMeta(false);
       setNombreUsuario("");
+      localStorage.clear();
     }
   };
 

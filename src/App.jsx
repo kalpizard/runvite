@@ -1,14 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
 // App.js
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -29,24 +18,22 @@ import { object } from "prop-types";
 
 function App() {
   const [nombreUsuario, setNombreUsuario] = useState(
-
-    localStorage.getItem('nombreUsuario') ?? ""
-
+    localStorage.getItem("nombreUsuario") ?? ""
   );
 
+  const [tokenUser, setTokenUser] = useState(
+    localStorage.getItem("token") ?? ""
+  );
 
-
-  const [meta, setMeta] = useState(localStorage.getItem('meta') ?? '');
+  const [meta, setMeta] = useState(localStorage.getItem("meta") ?? "");
   const [currUser, setCurrUser] = useState(null);
   const [isValidMeta, setIsValidMeta] = useState(false);
   const [modal, setModal] = useState(false);
   const [animarModal, setAnimarModal] = useState(false);
   const [tareas, setTareas] = useState(
-
-localStorage.getItem('tareas') ? JSON.parse
-(localStorage.getItem('tareas') ) : []
-
-
+    localStorage.getItem("tareas")
+      ? JSON.parse(localStorage.getItem("tareas"))
+      : []
   );
   const [fecha, setFecha] = useState([]);
   const [tareaEditar, setTareaEditar] = useState({});
@@ -62,37 +49,34 @@ localStorage.getItem('tareas') ? JSON.parse
   // LOCAL_STORAGE_META
   useEffect(() => {
     // Save the current value of 'meta' to localStorage
-    localStorage.setItem('meta', meta ?? '');
+    localStorage.setItem("meta", meta ?? "");
   }, [meta]);
-  
+
   //LOCAL_STORAGE_TAREA
-  useEffect (()=> {
-
-localStorage.setItem('tareas', JSON.stringify(tareas) ?? []);
-  },[tareas])
-
+  useEffect(() => {
+    localStorage.setItem("tareas", JSON.stringify(tareas) ?? []);
+  }, [tareas]);
 
   useEffect(() => {
-    const metaLS = localStorage.getItem('meta');
+    const metaLS = localStorage.getItem("meta");
     setIsValidMeta(metaLS !== null);
   }, []);
 
-useEffect(() => {
-localStorage.setItem('nombreUsuario', nombreUsuario ?? '')
+  useEffect(() => {
+    if (tokenUser) {
+      localStorage.setItem("nombreUsuario", nombreUsuario ?? "");
+    } else {
+      localStorage.setItem("nombreUsuario", nombreUsuario ?? "");
+    }
+  }, [nombreUsuario]);
 
-}, [nombreUsuario]);
+  useEffect(() => {
+    const nombreUsuarioLS = localStorage.getItem("nombreUsuario") ?? "";
 
-useEffect(() => {
-const nombreUsuarioLS = localStorage.getItem('nombreUsuario') ?? '';
-
-if(nombreUsuarioLS !== ''){
-  setIsValidMeta(true)
-}
-
-
-}, []);
-
-
+    if (nombreUsuarioLS !== "") {
+      setIsValidMeta(true);
+    }
+  }, []);
 
   // Uncomment the function
   const handleNuevaTareaClick = () => {
@@ -111,9 +95,7 @@ if(nombreUsuarioLS !== ''){
         tareaSate.id === tarea.id ? tarea : tareaSate
       );
       setTareas(tareasActualizadas);
-setTareaEditar({});
-
-
+      setTareaEditar({});
     } else {
       tarea.id = generarId();
       tarea.fecha = Date.now();
@@ -127,22 +109,21 @@ setTareaEditar({});
     }, 5000);
   };
 
-
-
-
-
-
-
-
-
-  
-
   const eliminarTarea = (id) => {
     // console.log('eliminando', id);
     const tareasActualizadas = tareas.filter((tarea) => tarea.id !== id);
     //  console.log(tareasActualizadas);
     setTareas(tareasActualizadas);
   };
+
+  const [logged, setLogged] = useState(false);
+
+  useEffect(() => {
+    //VALIDATE IF THERE IS A USER LOGGED
+    //LEER DESDE EL LOCALSTORAGE EL USUARIO LOGUEADO
+    if (setLogged(true)) {
+    }
+  }, []);
 
   return (
     <>
@@ -257,19 +238,19 @@ setTareaEditar({});
                 <div>
                   <h1>
                     <Options
-                        meta={meta}
-                    setMeta={setMeta}
-                    isValidMeta={isValidMeta}
-                    setIsValidMeta={setIsValidMeta}
-                    nombreUsuario={nombreUsuario}
-                    setNombreUsuario={setNombreUsuario}
-                    tareas={tareas}
-                    setTareas={setTareas}
-                    // tareas={tareas}
-                    // setTareas={setTareas}
-                
-                    //   nombreUsuario={nombreUsuario}
-                    //   setNombreUsuario={setNombreUsuario}
+                      meta={meta}
+                      setMeta={setMeta}
+                      isValidMeta={isValidMeta}
+                      setIsValidMeta={setIsValidMeta}
+                      nombreUsuario={nombreUsuario}
+                      setNombreUsuario={setNombreUsuario}
+                      tareas={tareas}
+                      setTareas={setTareas}
+                      // tareas={tareas}
+                      // setTareas={setTareas}
+
+                      //   nombreUsuario={nombreUsuario}
+                      //   setNombreUsuario={setNombreUsuario}
                     />
                   </h1>
                 </div>
@@ -283,29 +264,6 @@ setTareaEditar({});
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // App.js
 // import React, { useState, useEffect } from "react";
@@ -332,8 +290,6 @@ export default App;
 
 //   );
 
-
-
 //   const [meta, setMeta] = useState(localStorage.getItem('meta') ?? '');
 //   const [currUser, setCurrUser] = useState(null);
 //   const [isValidMeta, setIsValidMeta] = useState(false);
@@ -343,7 +299,6 @@ export default App;
 
 // localStorage.getItem('tareas') ? JSON.parse
 // (localStorage.getItem('tareas') ) : []
-
 
 //   );
 //   const [fecha, setFecha] = useState([]);
@@ -362,13 +317,12 @@ export default App;
 //     // Save the current value of 'meta' to localStorage
 //     localStorage.setItem('meta', meta ?? '');
 //   }, [meta]);
-  
+
 //   //LOCAL_STORAGE_TAREA
 //   useEffect (()=> {
 
 // localStorage.setItem('tareas', JSON.stringify(tareas) ?? []);
 //   },[tareas])
-
 
 //   useEffect(() => {
 //     const metaLS = localStorage.getItem('meta');
@@ -387,10 +341,7 @@ export default App;
 //   isValidMeta(true)
 // }
 
-
 // }, []);
-
-
 
 //   // Uncomment the function
 //   const handleNuevaTareaClick = () => {
@@ -411,7 +362,6 @@ export default App;
 //       setTareas(tareasActualizadas);
 // setTareaEditar({});
 
-
 //     } else {
 //       tarea.id = generarId();
 //       tarea.fecha = Date.now();
@@ -424,16 +374,6 @@ export default App;
 //       setModal(false);
 //     }, 5000);
 //   };
-
-
-
-
-
-
-
-
-
-  
 
 //   const eliminarTarea = (id) => {
 //     // console.log('eliminando', id);
@@ -557,7 +497,7 @@ export default App;
 //                     <Options
 //                     tareas={tareas}
 //                     setTareas={setTareas}
-                
+
 //                       nombreUsuario={nombreUsuario}
 //                       setNombreUsuario={setNombreUsuario}
 //                     />
@@ -573,53 +513,6 @@ export default App;
 // }
 
 // export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // EL FUNCIONA!!!!!!!!!!
 //   return (

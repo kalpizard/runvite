@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NuevaMeta from "../components/NuevaMeta";
 import ControlMetas from "../components/ControlMetas";
 
@@ -13,6 +13,8 @@ const Home = ({
   setNombreUsuario,
   setTareas
 }) => {
+
+
   return (
     <header>
       <h1>PLANIFICA TU META CON VROAD</h1>

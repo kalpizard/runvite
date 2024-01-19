@@ -547,3 +547,26 @@ body .modal {
     font-size: 2.4rem;
     text-align: right;
 }
+
+
+
+
+
+
+
+
+
+
+
+const [logged, setLogged] = useState(false);
+
+
+  useEffect(() => {
+    //VALIDATE IF THERE IS A USER LOGGED
+    //LEER DESDE EL LOCALSTORAGE EL USUARIO LOGUEADO
+      if(setLogged(true)){
+
+        
+      }
+ 
+  }, []);

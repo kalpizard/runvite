@@ -1,11 +1,23 @@
-// ListadoTareas.jsx
-import React from "react";
+
+
+
+import React, { useState, useEffect } from "react";
 import Tarea from "../components/Tarea";
 
 const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
+  const [contadorTareas, setContadorTareas] = useState(0);
+
+  useEffect(() => {
+    setContadorTareas(tareas.length);
+  }, [tareas]);
+
+  const handleEliminarTarea = (id) => {
+    eliminarTarea(id);
+  };
+
   return (
     <div className="">
-      <h2>{tareas.length ? "Tareas" : "No Hay Tarea"}</h2>
+      <h2>{contadorTareas ? `Tareas (${contadorTareas})` : "No Hay Tarea"}</h2>
 
       {Array.isArray(tareas) && tareas.length > 0 ? (
         tareas.map((tarea) => (
@@ -13,7 +25,7 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
             key={tarea.id}
             tarea={tarea}
             setTareaEditar={setTareaEditar}
-            eliminarTarea={eliminarTarea}
+            eliminarTarea={() => handleEliminarTarea(tarea.id)}
           />
         ))
       ) : (
@@ -24,6 +36,64 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
 };
 
 export default ListadoTareas;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//SIN "CONTADOR"
+// // ListadoTareas.jsx
+// import React from "react";
+// import Tarea from "../components/Tarea";
+
+// const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
+//   return (
+//     <div className="">
+//       <h2>{tareas.length ? "Tareas" : "No Hay Tarea"}</h2>
+
+//       {Array.isArray(tareas) && tareas.length > 0 ? (
+//         tareas.map((tarea) => (
+//           <Tarea
+//             key={tarea.id}
+//             tarea={tarea}
+//             setTareaEditar={setTareaEditar}
+//             eliminarTarea={eliminarTarea}
+//           />
+//         ))
+//       ) : (
+//         <p>No hay tareas disponibles.</p>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default ListadoTareas;
 
 //FUNCIONA EN EL BORRRRRAR
 // // ListadoTareas.jsx
