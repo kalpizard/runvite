@@ -10,13 +10,18 @@ import User from "./components/User";
 import Stats from "./pages/Stats";
 import Home from "./pages/Home";
 import Options from "./pages/Options";
+import Footer from "./components/Footer";
+import '../src/styles/home.css'
+import '../src/styles/stats.css'
+
+import '../src/styles/navbar.css'
 import { generarId, formatearFecha } from "./components/helpers";
 import ListadoTareas from "./components/ListadoTareas";
 import Modal from "./components/Modal";
 import "./index.css";
 import { LeadingActions } from "react-swipeable-list";
 import { object } from "prop-types";
-
+// import ProgressBar1 from "./components/ProgressBar1";
 function App() {
   const [nombreUsuario, setNombreUsuario] = useState(
     localStorage.getItem("nombreUsuario") ?? ""
@@ -137,6 +142,8 @@ function App() {
                 <Header />
                 <StartButton />
                 <User currUser={currUser} setCurrUser={setCurrUser} />
+            
+                <Footer/>
               </div>
             }
           />
@@ -215,8 +222,12 @@ function App() {
                       setTareaEditar={setTareaEditar}
                     />
                   )}
+          
                   <Exit />
+              
+               
                 </div>
+                
               }
             />
             <Route
@@ -229,8 +240,10 @@ function App() {
                       tareas.length > 0 ? tareas[tareas.length - 1].fecha : null
                     }
                   />
+
                   <Exit />
                 </div>
+               
               }
             />
             <Route
@@ -253,6 +266,8 @@ function App() {
                       //   nombreUsuario={nombreUsuario}
                       //   setNombreUsuario={setNombreUsuario}
                     />
+                    
+                  <Exit />
                   </h1>
                 </div>
               }

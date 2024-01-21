@@ -19,7 +19,6 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
     <div className="">
       <h2>{contadorTareas ? `Tareas (${contadorTareas})` : "No Hay Tarea"}</h2>
 
-<<<<<<< HEAD
       {Array.isArray(tareas) && tareas.length > 0 ? (
         tareas.map((tarea) => (
           <Tarea
@@ -32,25 +31,12 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
       ) : (
         <p>No hay tareas disponibles.</p>
       )}
-=======
-      {Array.isArray(tareas) && tareas.length > 0
-        ? tareas.map((tarea) => (
-            <Tarea
-              key={tarea.id}
-              tarea={tarea}
-              setTareaEditar={setTareaEditar}
-              eliminarTarea={eliminarTarea}
-            />
-          ))
-        : null}
->>>>>>> ee4f3442e8afab4a958c8ba4700c908979a4ce30
     </div>
   );
 };
 
 export default ListadoTareas;
 
-<<<<<<< HEAD
 
 
 
@@ -82,8 +68,6 @@ export default ListadoTareas;
 
 
 //SIN "CONTADOR"
-=======
->>>>>>> ee4f3442e8afab4a958c8ba4700c908979a4ce30
 // // ListadoTareas.jsx
 // import React from "react";
 // import Tarea from "../components/Tarea";

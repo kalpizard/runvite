@@ -74,6 +74,7 @@ const NuevaMeta = ({
       {location.pathname !== "/navbar/home" && (
         <Profile nombreUsuario={nombreUsuario} />
       )}
+      
     </div>
   );
 };

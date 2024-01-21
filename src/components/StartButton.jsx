@@ -12,10 +12,16 @@ const StartButton = () => {
   };
 
   return (
-    <div className='button'>
-      <button className='yo'  onClick={handleButtonClick}>Comenzar Ahora</button>
-    </div>
-  );
+  
+
+
+
+      <div className='div-button'>
+        <button className='start-button'  onClick={handleButtonClick}>Comenzar Ahora</button>
+      </div>
+
+
+    );
 };
 
 export default StartButton;

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import NuevaMeta from "../components/NuevaMeta";
 import ControlMetas from "../components/ControlMetas";
 
-
+import Footer from "../components/Footer";
 const Home = ({
   meta,
   setMeta,
@@ -13,7 +13,8 @@ const Home = ({
   setNombreUsuario,
   setTareas
 }) => {
-
+//USEFECT jalar metas y tareas del usuario 
+//get al backend y paso el id del usuario, debe estar autenticado 
 
   return (
     <header>
@@ -38,9 +39,13 @@ const Home = ({
           setMeta={setMeta}
           isValidMeta={isValidMeta}
           setIsValidMeta={setIsValidMeta}
+          
         />
+       
       )}
     </header>
+    
+
   );
 };
 
