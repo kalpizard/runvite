@@ -1,33 +1,29 @@
-
-
-
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Tarea from "../components/Tarea";
 
 const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
-  const [contadorTareas, setContadorTareas] = useState(0);
-
-  useEffect(() => {
-    setContadorTareas(tareas.length);
-  }, [tareas]);
+  const [contadorTareasEliminadas, setContadorTareasEliminadas] = useState(0);
 
   const handleEliminarTarea = (id) => {
     eliminarTarea(id);
+    // Incrementa el contador de tareas eliminadas al eliminar una tarea
+    setContadorTareasEliminadas((prevContador) => prevContador + 1);
   };
 
   return (
     <div className="">
-      <h2>{contadorTareas ? `Tareas (${contadorTareas})` : "No Hay Tarea"}</h2>
-
       {Array.isArray(tareas) && tareas.length > 0 ? (
-        tareas.map((tarea) => (
-          <Tarea
-            key={tarea.id}
-            tarea={tarea}
-            setTareaEditar={setTareaEditar}
-            eliminarTarea={() => handleEliminarTarea(tarea.id)}
-          />
-        ))
+        <>
+          <p>{contadorTareasEliminadas ? `Tareas Eliminadas: ${contadorTareasEliminadas}` : ""}</p>
+          {tareas.map((tarea) => (
+            <Tarea
+              key={tarea.id}
+              tarea={tarea}
+              setTareaEditar={setTareaEditar}
+              eliminarTarea={() => handleEliminarTarea(tarea.id)}
+            />
+          ))}
+        </>
       ) : (
         <p>No hay tareas disponibles.</p>
       )}
@@ -36,17 +32,6 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
 };
 
 export default ListadoTareas;
-
-
-
-
-
-
-
-
-
-
-
 
 
 

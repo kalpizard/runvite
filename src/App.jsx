@@ -119,6 +119,45 @@ function App() {
     }, 5000);
   };
 
+
+
+
+///////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const eliminarTarea = (id) => {
     // console.log('eliminando', id);
     const tareasActualizadas = tareas.filter((tarea) => tarea.id !== id);
@@ -240,6 +279,7 @@ function App() {
                 <div>
                   {/* Pass the creation date to the Stats component */}
                   <Stats
+                  tareas={tareas}
                     fecha={
                       tareas.length > 0 ? tareas[tareas.length - 1].fecha : null
                     }
