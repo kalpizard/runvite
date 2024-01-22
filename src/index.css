@@ -1,130 +1,349 @@
-.navigation {
-  display: flex;
-  background-color: rgb(72, 227, 90);
-  padding: 30px;
+body {
+  background-color: #399ade;
 }
 
-.navigation ul {
-  list-style-type: none;
+.title h1 {
+  border: 18px solid transparent;
   margin: 0;
-  padding: 0;
-  display: flex;
+  font-family: "MuseoModerno", sans-serif;
+  font-size: 130px;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  color: #ee1d1d;
 }
 
-.navigation li {
-  margin-right: 15px;
+.title h1 span {
+  color: #ddec55;
+  text-transform: uppercase;
 }
 
-.navigation a {
-  text-decoration: none;
-  color: #fff; /* Cambiar el color del texto según tus preferencias */
+.title h1 span.a {
+  margin: 0;
+  display: inline-block;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  text-shadow: 0 0 12px rgba(0, 0, 255, 0.8);
+  color: #ee1d1d;
 }
 
-.navigation a:hover {
-  color: #ddd; /* Cambiar el color del texto al pasar el ratón sobre el enlace */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-160px);
+  }
+
+  80% {
+    transform: translateX(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .encabezado {
-  /* background-color: rgb(72, 227, 90); */
-  background-image: url(./imgs/clouds1.avif);
-  width: 100%; /* O el ancho que desees */
-  height: 100%; /* O la altura que desees */
-  justify-content: center;
-  text-align: center;
-}
-
-.font {
+  background-image: url('./imgs/clouds1.avif');
+  padding: 34px;
   display: flex;
   justify-content: center;
 }
 
-.titulo {
-  align-items: center;
-  color: rgb(76, 122, 215);
+.div-button {
+  border-top: 15px solid #8cc9f6;
+  background-color: #399ade;
+  color: #1c1f21;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  padding-bottom: 90px;
+}
+
+.portada {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 20px;
+}
+
+/* Media Query para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+  .title h1 {
+    font-size: 80px;
+  }
+
+  .start-button {
+    padding: 10px 150px;
+  }
+
+  .form-Login {
+    max-width: 500px;
+  }
+
+  /* Estilos para h2 en pantallas pequeñas */
+  .portada h2 {
+    font-size: 16px;
+  }
+}
+
+.start-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 300px;
+  font-size: 20px;
+  height: 50px;
+  border: none;
+  border: 1px solid #ffffff;
+  margin-top: 30px;
+}
+
+.start-button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 4px solid #000000;
+}
+
+.divLogin {
+  background-color: #399ade;
+  width: 92%;
+  margin: 0 auto;
+}
+
+.form-Login {
+  font-size: 20px;
+  font-weight: bold;
+  max-width: 800px;
+  margin: auto;
+  padding: 14px;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-Login input,
+.form-login input[type='submit'] {
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  border: 2px solid #ccc;
+  padding: 8px;
+  width: 90%;
+}
+
+.form-Login input[type='submit'] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+}
+
+.form-Login input[type='submit']:hover {
+  background-color: #45a049;
+}
+
+.signup.center-text {
+  text-align: center;
+}
+
+.signup.center-text span {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.not-registered {
+  text-decoration: none;
+  font-size: 24px;
+  color: yellow;
+}
+
+
+
+
+.w3-border{
+
+height: 30px;
+background-color:red;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
+  background-color: #399ade;
+}
+
+.title h1 {
+  border: 18px solid transparent;
   margin: 0;
   font-family: "MuseoModerno", sans-serif;
-  font-size: 300px;
+  font-size: 130px;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  color: #ee1d1d;
 }
 
-.subtitulo {
-  color: rgb(154, 59, 117);
-  font-size: 100px;
-  font-family: "MuseoModerno", sans-serif;
-  display: inline; /* o display: inline-block; */
+.title h1 span {
+  color: #ddec55;
+  text-transform: uppercase;
 }
 
-/* Agrega estos estilos en tu archivo de estilos CSS (puede ser en un archivo separado o en línea) */
+.title h1 span.a {
+  margin: 0;
+  display: inline-block;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  text-shadow: 0 0 12px rgba(0, 0, 255, 0.8);
+  color: #ee1d1d;
+}
 
-.button {
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-160px);
+  }
+
+  80% {
+    transform: translateX(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.encabezado {
+  background-image: url('./imgs/clouds1.avif');
+  padding: 34px;
+  display: flex;
+  justify-content: center;
+}
+
+.div-button {
+  border-top: 15px solid #8cc9f6;
+  background-color: #399ade;
+  color: #1c1f21;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   text-align: center;
-  height: 200px;
-  padding: 20px;
+  padding-bottom: 90px;
 }
-/* 
-.yo{
-  font-size: 50px
-} */
 
-.button button {
-  /* background-color: rgb(139, 69, 19); */
-  background-color: rgb(255, 1, 1);
+.portada{
+
+  font-family: 'Archivo Black', sans-serif;
+
+font-size: 20px
+
+}
+
+.start-button {
+  background-color: #000;
   color: #fff;
-  padding: 10px 20px;
-  font-size: 40px;
-
-  height: 200px;
-  width: 200px;
+  padding: 10px 300px;
+  font-size: 20px;
+  height: 50px;
   border: none;
-  border-radius: 100px;
-  cursor: pointer;
-}
-.register {
-  display: grid;
-  place-items: center; /* Centra ambos horizontal y verticalmente */
-  height: 30vh; /* 100% del viewport height para centrar verticalmente */
-  background-color: chartreuse;
+  border: 1px solid #ffffff;
+  margin-top: 30px;
 }
 
-header {
-  background-color: aqua;
+.start-button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 4px solid #000000;
 }
 
-.agregarTareas {
-  height: 40px;
+.divLogin {
+  background-color: #399ade;
+  width: 92%;
+  margin: 0 auto;
 }
 
-.cerrar-tarea {
-  justify-content: right;
+.form-Login {
+  font-size: 20px;
+  font-weight: bold;
+  max-width: 800px;
+  margin: auto;
+  padding: 14px;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.modal {
-  background-color: aqua;
+.form-Login input,
+.form-login input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  border: 2px solid #ccc;
+  padding: 8px;
+  width: 90%;
 }
 
-.exit_button {
-  position: fixed; /* Establece la posición fija para que se mantenga en su lugar incluso al hacer scroll */
-  bottom: 10px; /* Ajusta la distancia desde la parte inferior de la pantalla */
-  left: 80px; /* Ajusta la distancia desde el borde izquierdo de la pantalla */
-  cursor: pointer; /* Indica que el elemento es interactivo */
+.form-Login input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
 }
 
-fieldset {
-  width: 50%;
-  margin: 0 auto; /* Para centrar horizontalmente */
-}
-.center-form {
-  width: 50%; /* Puedes ajustar este valor según tus necesidades */
-  margin: 0 auto; /* Centra horizontalmente el formulario */
+.form-Login input[type="submit"]:hover {
+  background-color: #45a049;
 }
 
-.signup {
-  width: 50%;
-  margin: 0 auto; /* Para centrar horizontalmente */
-}
-.stats {
-  background-color: beige;
+.signup.center-text {
+  text-align: center;
 }
 
-.profile {
-  background-color: #1048a4;
+.signup.center-text span {
+  font-weight: bold;
+  font-size: 30px;
 }
+
+.not-registered {
+  text-decoration: none;
+  font-size: 24px;
+  color: yellow;
+}
+
+@media only screen and (max-width: 600px) {
+  .title h1 {
+    font-size: 80px;
+  }
+
+  .start-button {
+    padding: 10px 150px;
+  }
+
+  .form-Login {
+    max-width: 500px;
+  }
+}
+
+
+ */

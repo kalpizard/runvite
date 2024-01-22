@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import NuevaMeta from "../components/NuevaMeta";
 import ControlMetas from "../components/ControlMetas";
-
+import Progress from "../components/Progress";
 
 const Home = ({
   meta,
@@ -17,7 +17,10 @@ const Home = ({
 
   return (
     <header>
+<Progress/>
       <h1>PLANIFICA TU META CON VROAD</h1>
+    
+
       {isValidMeta ? (
         <div>
           <ControlMetas

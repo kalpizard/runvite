@@ -8,7 +8,9 @@ function NavBar() {
 
   return (
     <div>
+      
       <nav className="navigation">
+        
         <ul className="nav-list">
           <li className="nav-item">
             <Link to="/navbar/home" className="nav-link">
@@ -41,3 +43,7 @@ function NavBar() {
 }
 
 export default NavBar;
+
+
+
+

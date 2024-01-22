@@ -1,8 +1,11 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+
+
 const Login = ({ setCurrUser, setShow }) => {
   const formRef = useRef();
   const navigate = useNavigate();
+
   const login = async (userInfo, setCurrUser) => {
     const url = "http://localhost:3000/login";
     try {
@@ -23,6 +26,7 @@ const Login = ({ setCurrUser, setShow }) => {
       console.log("error", error);
     }
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
@@ -33,30 +37,36 @@ const Login = ({ setCurrUser, setShow }) => {
     login(userInfo, setCurrUser);
     e.target.reset();
   };
+
   const handleClick = (e) => {
     e.preventDefault();
     setShow(false);
   };
+
   return (
-    <div>
-      <fieldset>
+    <div className="divLogin">
+      <fieldset className="form-Login">
         <form ref={formRef} onSubmit={handleSubmit}>
-          Email: <input type="email" name="email" placeholder="email" />
+          <label>Email: </label>
+          <input type="email" name="email" placeholder="email" />
           <br />
-          Password:{" "}
+          <label>Password: </label>
           <input type="password" name="password" placeholder="password" />
           <br />
-          <input type="submit" value="Login" />
+          <input type="submit" value="Login" className="start-button" />
         </form>
       </fieldset>
       <br />
-      <div className="signup">
-        Not registered yet,{" "}
-        <a href="#signup" onClick={handleClick}>
-          Signup
-        </a>{" "}
-      </div>
+      <div className="signup center-text">
+  <span>Not registered yet,{" "}</span>
+  <a href="#signup" className="not-registered" onClick={handleClick}>
+    <strong>Signup</strong>
+  </a>{" "}
+</div>
+
+
     </div>
   );
 };
+
 export default Login;

@@ -9,10 +9,15 @@ import User from "./components/User";
 import Stats from "./pages/Stats";
 import Home from "./pages/Home";
 import Options from "./pages/Options";
+
 import { generarId, formatearFecha } from "./components/helpers";
 import ListadoTareas from "./components/ListadoTareas";
 import Modal from "./components/Modal";
-import "./index.css";
+
+import './index.css'
+import './components/styles/home.css';
+import './components/styles/navbar.css';
+
 import { LeadingActions } from "react-swipeable-list";
 import { object } from "prop-types";
 
