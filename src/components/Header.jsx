@@ -10,10 +10,6 @@ const Header = () => {
       </div>
 
 
-<div className="title">
-  <h1>V <span >ro<span className="a" >a</span>d</span> </h1>
-</div>
-
     </header>
   );
 };
