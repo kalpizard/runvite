@@ -6,10 +6,17 @@ import Date from '../components/Date';
 
 const Stats = ({ fecha }) => {
   return (
+
+
+    <div className='stats-back'>
+
     <div className="stats">
       <h1>STARTS</h1>
       <Date 
       fecha={fecha}  />
+    </div>
+
+
     </div>
   );
 };

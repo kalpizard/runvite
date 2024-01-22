@@ -1,0 +1,49 @@
+
+
+  
+  
+  
+  
+
+  header {
+    background-color: aqua;
+  }
+  
+  .agregarTareas {
+    height: 40px;
+  }
+  
+  .cerrar-tarea {
+    justify-content: right;
+  }
+  
+  .modal {
+    background-color: aqua;
+  }
+  
+  .exit_button {
+    position: fixed; /* Establece la posición fija para que se mantenga en su lugar incluso al hacer scroll */
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior de la pantalla */
+    left: 80px; /* Ajusta la distancia desde el borde izquierdo de la pantalla */
+    cursor: pointer; /* Indica que el elemento es interactivo */
+  }
+  
+  fieldset {
+    width: 50%;
+    margin: 0 auto; /* Para centrar horizontalmente */
+  }
+  .center-form {
+    width: 50%; /* Puedes ajustar este valor según tus necesidades */
+    margin: 0 auto; /* Centra horizontalmente el formulario */
+  }
+  
+  .signup {
+    width: 50%;
+    margin: 0 auto; /* Para centrar horizontalmente */
+  }
+ 
+  .profile {
+    background-color: #1048a4;
+  }
+  
+  

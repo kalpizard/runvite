@@ -4,6 +4,24 @@ body {
 
 .title h1 {
   border: 18px solid transparent;
+body{
+  background-color: #8cc9f6;
+}
+
+
+.title h1 {
+  border: 20px solid transparent; /* Ajusta el tamaño del borde según tus necesidades */
+  margin: 0;
+  font-family: "MuseoModerno", sans-serif;
+  font-size: 110px;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+ 
+  color: #ee1d1d;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Agrega un pequeño borde oscuro */
+}
+.title h1 {
+  border: 20px solid transparent;
   margin: 0;
   font-family: "MuseoModerno", sans-serif;
   font-size: 130px;
@@ -42,6 +60,12 @@ body {
     transform: translateX(0);
   }
 }
+
+
+
+
+
+
 
 .encabezado {
   background-image: url('./imgs/clouds1.avif');

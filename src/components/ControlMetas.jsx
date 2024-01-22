@@ -19,6 +19,17 @@ const ControlMetas = ({
       localStorage.clear();
     }
   };
+  // const handleResetApp = () => {
+  //   const resultado = window.confirm("¿VOLVER A COMENZAR?");
+  //   if (resultado) {
+  //     setTareas([]);
+  //     setMeta("");
+  //     setIsValidMeta(false);
+  //     setNombreUsuario(false);
+  //     nombreUsuario=("")
+
+  //   }
+  // };
 
   return (
     <div className="contenedor-meta-dos-columnas">

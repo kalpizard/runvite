@@ -55,7 +55,7 @@ const Login = ({ setCurrUser, setShow }) => {
           <br />
           <input type="submit" value="Login" className="start-button" />
         </form>
-      </fieldset>
+
       <br />
       <div className="signup center-text">
   <span>Not registered yet,{" "}</span>
