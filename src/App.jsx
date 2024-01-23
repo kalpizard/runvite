@@ -98,60 +98,31 @@ function App() {
     }, 1000);
   };
 
+
+
   const guardarTarea = (tarea) => {
+    const fechaActual = Date.now(); // Obtén la marca de tiempo actual
+  
     if (tarea.id) {
-      //actualizar
-      const tareasActualizadas = tareas.map((tareaSate) =>
-        tareaSate.id === tarea.id ? tarea : tareaSate
+      // actualizar
+      const tareasActualizadas = tareas.map((tareaState) =>
+        tareaState.id === tarea.id ? tarea : tareaState
       );
       setTareas(tareasActualizadas);
       setTareaEditar({});
     } else {
       tarea.id = generarId();
-      tarea.fecha = Date.now();
+      tarea.fecha = fechaActual; // Utiliza la fecha actual como la fecha de la tarea
       setTareas([...tareas, tarea]);
     }
-
+  
     setAnimarModal(false);
-
+  
     setTimeout(() => {
       setModal(false);
     }, 5000);
   };
-
-
-
-
-///////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 

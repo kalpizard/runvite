@@ -10,6 +10,7 @@ const NuevaMeta = ({
   setMeta,
   setIsValidMeta,
   fecha,
+  setFecha, // Agregar setFecha como prop
 }) => {
   const [mensaje, setMensaje] = useState("");
   const regex = /^[A-Za-záéíóúÁÉÍÓÚ\s]{3,}$/;
@@ -30,8 +31,9 @@ const NuevaMeta = ({
 
     setMensaje("");
     setIsValidMeta(true);
-    // Guarda la fecha actual en el estado 'fecha'
-    setFecha(Date.now());
+    
+    // Actualizar el estado 'fecha' con el valor de 'meta'
+    setFecha(Date.now()); // Puedes reemplazar Date.now() con el valor de 'meta' si es necesario
   };
 
   return (

@@ -14,7 +14,7 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
     <div className="">
       {Array.isArray(tareas) && tareas.length > 0 ? (
         <>
-          <p>{contadorTareasEliminadas ? `Tareas Eliminadas: ${contadorTareasEliminadas}` : ""}</p>
+          {/* <p>{contadorTareasEliminadas ? `Tareas Eliminadas: ${contadorTareasEliminadas}` : ""}</p> */}
           {tareas.map((tarea) => (
             <Tarea
               key={tarea.id}

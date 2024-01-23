@@ -5,7 +5,7 @@ const Date = ({ fecha }) => {
   return (
     <div>
       <p className="fecha-gasto">
-        Agregado el: <span>{formatearFecha(fecha)}</span>
+    <span>{formatearFecha(fecha)}</span>
       </p>
     </div>
   );

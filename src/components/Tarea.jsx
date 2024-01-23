@@ -22,13 +22,27 @@ const diccionarioIconos = {
 const Tarea = ({ tarea, setTareaEditar, eliminarTarea }) => {
   const { dificultad, nombre, descripcion, id, fecha } = tarea;
 
+  const fechaFormateada = formatearFecha(fecha);
+  const fechaCreacion = formatearFecha(tarea.fechaCreacion);
+
+  const handleEliminarTarea = () => {
+    if (dificultad == 3) {
+      // Mostrar alerta si la dificultad es 3 y luego eliminar la tarea
+      window.alert('¡Cuidado! Esta tarea tiene dificultad 3. ¿Estás seguro de eliminarla?');
+    } else {
+      // Lógica de eliminación de tarea aquí si la dificultad no es 3
+      eliminarTarea();
+      window.alert('La tarea ha sido eliminada exitosamente.');
+    }
+  };
+
   return (
     <SwipeableList>
       <SwipeableListItem
-        key={id} // Asignar una clave única aquí
+        key={id}
         leadingActions={
           <LeadingActions>
-            <SwipeAction onClick={() => eliminarTarea(id)} destructive={true}>
+            <SwipeAction onClick={handleEliminarTarea} destructive={true}>
               Borrar
             </SwipeAction>
           </LeadingActions>
@@ -51,9 +65,6 @@ const Tarea = ({ tarea, setTareaEditar, eliminarTarea }) => {
             <div className="descripcion gasto">
               <p className="nombre">{nombre}</p>
               <p className="descripcion">{descripcion}</p>
-              <p className="fecha">
-                Agregado el: <span>{formatearFecha(fecha)}</span>
-              </p>
             </div>
           </div>
         </div>
@@ -63,6 +74,43 @@ const Tarea = ({ tarea, setTareaEditar, eliminarTarea }) => {
 };
 
 export default Tarea;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // //USADO ANTERIORMENTE, FUNCIONA EN YA BORAAAA
 // // // Tarea.jsx
