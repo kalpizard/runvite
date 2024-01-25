@@ -8,8 +8,11 @@
   }
   .navigation {
     display: flex;
-    background-color: rgb(1, 10, 2);
-    padding: 30px;
+    /* background-color: rgb(1, 10, 2); */
+    
+    background-image: url('/src/imgs');
+    padding: 250px;
+    margin-bottom: 20px;
     justify-content: flex-end; /* Alinea los elementos al final del contenedor (derecha) */
   }
   
@@ -18,7 +21,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-    font-size: 30px;
+    font-size: 50px;
   }
   
   .navigation li {

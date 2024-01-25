@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 const ControlMetas = ({
   meta,
@@ -7,8 +9,12 @@ const ControlMetas = ({
   setMeta, // Asegúrate de que setMetas se pasa como prop
   setIsValidMeta,
   nombreUsuario,
-  setNombreUsuario
+  setNombreUsuario,
 }) => {
+  const [porcentaje, setPorcentaje] = useState(30);
+
+
+
   const handleResetApp = () => {
     const resultado = window.confirm("¿VOLVER A COMENZAR?");
     if (resultado) {
@@ -16,25 +22,15 @@ const ControlMetas = ({
       setMeta("");
       setIsValidMeta(false);
       setNombreUsuario("");
-      localStorage.clear();
+      localStorage.removeItem("goal");
+      localStorage.setItem("goal", "");
     }
   };
-  // const handleResetApp = () => {
-  //   const resultado = window.confirm("¿VOLVER A COMENZAR?");
-  //   if (resultado) {
-  //     setTareas([]);
-  //     setMeta("");
-  //     setIsValidMeta(false);
-  //     setNombreUsuario(false);
-  //     nombreUsuario=("")
-
-  //   }
-  // };
 
   return (
-    <div className="contenedor-meta-dos-columnas">
+    <div className="contenedor-presupuesto contenedor sombra dos-columnas">
       <div>
-        <p>Barra de progreso</p>
+        <CircularProgressbar value={porcentaje} />
       </div>
       <div className="contenido-meta">
         <button className="reset-app" type="button" onClick={handleResetApp}>
@@ -50,6 +46,7 @@ const ControlMetas = ({
 };
 
 export default ControlMetas;
+
 
 //FUNCIONA SIN SET METAS
 // // ControlMetas.js

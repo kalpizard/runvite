@@ -21,7 +21,7 @@ const Home = ({
   return (
     <header>
 <Progress/>
-      <h1>PLANIFICA TU META CON VROAD</h1>
+      <h1 className="planifica">PLANIFICA TU META CON VROAD</h1>
     
 
       {isValidMeta ? (

@@ -11,7 +11,7 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
   };
 
   return (
-    <div className="">
+    <div className="no hay">
       {Array.isArray(tareas) && tareas.length > 0 ? (
         <>
           {/* <p>{contadorTareasEliminadas ? `Tareas Eliminadas: ${contadorTareasEliminadas}` : ""}</p> */}
@@ -25,7 +25,7 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
           ))}
         </>
       ) : (
-        <p>No hay tareas disponibles.</p>
+        <p className="no-hay">No hay tareas disponibles.</p>
       )}
     </div>
   );

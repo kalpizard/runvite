@@ -1,4 +1,3 @@
-
 // App.js ENTREGA
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -11,17 +10,17 @@ import Stats from "./pages/Stats";
 import Home from "./pages/Home";
 import Options from "./pages/Options";
 import Footer from "./components/Footer";
-import '../src/styles/home.css'
-import '../src/styles/stats.css'
+import "../src/styles/home.css";
+import "../src/styles/stats.css";
 
-import '../src/styles/navbar.css'
+import "../src/styles/navbar.css";
 import { generarId, formatearFecha } from "./components/helpers";
 import ListadoTareas from "./components/ListadoTareas";
 import Modal from "./components/Modal";
 
-import './index.css'
-import './components/styles/home.css';
-import './components/styles/navbar.css';
+import "./index.css";
+import "./components/styles/home.css";
+import "./components/styles/navbar.css";
 
 import { LeadingActions } from "react-swipeable-list";
 import { object } from "prop-types";
@@ -34,19 +33,60 @@ function App() {
   const [tokenUser, setTokenUser] = useState(
     localStorage.getItem("token") ?? ""
   );
+  const getGoalFromStorage = () => {
+    const itemStorage = localStorage.getItem("goal");
+    if (itemStorage === "" || itemStorage === undefined) {
+      return {};
+    }
+    const goalStorage = JSON.parse(itemStorage);
+
+    if (!goalStorage || !goalStorage.goal) {
+      return { goal: { tasks: [] } }; // Return a default value if no data is found
+    }
+    return goalStorage;
+  };
+
+
+
+
 
   const [meta, setMeta] = useState(localStorage.getItem("meta") ?? "");
   const [currUser, setCurrUser] = useState(null);
   const [isValidMeta, setIsValidMeta] = useState(false);
   const [modal, setModal] = useState(false);
   const [animarModal, setAnimarModal] = useState(false);
-  const [tareas, setTareas] = useState(
-    localStorage.getItem("tareas")
-      ? JSON.parse(localStorage.getItem("tareas"))
-      : []
-  );
-  const [fecha, setFecha] = useState([]);
+  const [tareas, setTareas] = useState([]);
+
   const [tareaEditar, setTareaEditar] = useState({});
+
+  // Crear el objeto
+  // const metaObjeto = {
+  //   goal: {
+  //     name: "Estudio",
+  //     deadline: "20/12/2024",
+  //     tasks: [
+  //       {
+  //         nombre: "aaaaa",
+  //         dificultad: "3",
+  //         descripcion: "",
+  //         id: "a9if3vj787jlrrzjhfo",
+  //         fecha: 1706112851460,
+  //       },
+  //       {
+  //         nombre: "ddddddddd",
+  //         dificultad: "2",
+  //         descripcion: "hhhhhhhhhhh",
+  //         id: "o5rayl6m24jlrrzjr9k",
+  //         fecha: 1706112864200,
+  //       },
+  //     ],
+  //   },
+  // };
+
+  // Convertir a cadena JSON usando JSON.stringify
+  // const jsonString = JSON.stringify(metaObjeto, null, 2);
+
+  // localStorage.setItem("goal", jsonString);
 
   useEffect(() => {
     if (Object.keys(tareaEditar).length > 0) setModal(true);
@@ -56,6 +96,18 @@ function App() {
     }, 1000);
   }, [tareaEditar]);
 
+  // useEffect(()=>{
+  //   const preconfig1= "Estudio"
+  //   const task = {"Buscar carrera":"matricular la U"}
+
+  //   setGoal(preconfig1)
+
+  //   setTareas([...goal, task]);
+
+  // })
+
+  // console.log(goal)
+
   // LOCAL_STORAGE_META
   useEffect(() => {
     // Save the current value of 'meta' to localStorage
@@ -64,7 +116,19 @@ function App() {
 
   //LOCAL_STORAGE_TAREA
   useEffect(() => {
-    localStorage.setItem("tareas", JSON.stringify(tareas) ?? []);
+    // localStorage.setItem("tareas", JSON.stringify(tareas) ?? []);
+    const goalStorage = getGoalFromStorage();
+    setTimeout(() => {
+   
+      if (goalStorage.goal === undefined) {
+        localStorage.setItem("goal", "{}");
+      } else {
+        goalStorage.goal.tasks = tareas;
+        localStorage.setItem("goal", JSON.stringify(goalStorage) ?? []);
+      }
+
+     
+    }, 300);
   }, [tareas]);
 
   useEffect(() => {
@@ -88,6 +152,22 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const goalStorage = getGoalFromStorage();
+    setTimeout(() => {
+      if(goalStorage.goal && goalStorage.goal.tasks){
+
+        setTareas(goalStorage.goal.tasks);
+
+      } else {
+  setTareas([]);
+
+      }
+
+      console.log(goalStorage);
+    }, 500);
+  }, []);
+
   // Uncomment the function
   const handleNuevaTareaClick = () => {
     setModal(true);
@@ -98,11 +178,9 @@ function App() {
     }, 1000);
   };
 
-
-
   const guardarTarea = (tarea) => {
     const fechaActual = Date.now(); // Obtén la marca de tiempo actual
-  
+
     if (tarea.id) {
       // actualizar
       const tareasActualizadas = tareas.map((tareaState) =>
@@ -115,19 +193,13 @@ function App() {
       tarea.fecha = fechaActual; // Utiliza la fecha actual como la fecha de la tarea
       setTareas([...tareas, tarea]);
     }
-  
+
     setAnimarModal(false);
-  
+
     setTimeout(() => {
       setModal(false);
     }, 5000);
   };
-  
-
-
-
-
-
 
   const eliminarTarea = (id) => {
     // console.log('eliminando', id);
@@ -156,8 +228,8 @@ function App() {
                 <Header />
                 <StartButton />
                 <User currUser={currUser} setCurrUser={setCurrUser} />
-            
-                <Footer/>
+
+                <Footer />
               </div>
             }
           />
@@ -185,24 +257,27 @@ function App() {
                           eliminarTarea={eliminarTarea}
                         />
                       </main>
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="agregarTareas"
-                          width="100"
-                          height="100"
-                          viewBox="0 0 24 24"
-                          strokeWidth="3"
-                          stroke="#009988"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          onClick={handleNuevaTareaClick}
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M12 5l0 14" />
-                          <path d="M5 12l14 0" />
-                        </svg>
+                      <div className="nuevo-gasto">
+           
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="agregarTareas"
+  width="200"
+  height="100"
+  viewBox="0 0 24 24"
+  strokeWidth="3"
+  stroke="#FF0000"  
+  fill="none"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  onClick={handleNuevaTareaClick}
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M12 5l0 14" />
+  <path d="M5 12l14 0" />
+</svg>
+
+
                       </div>
 
                       {/* <div>
@@ -236,12 +311,9 @@ function App() {
                       setTareaEditar={setTareaEditar}
                     />
                   )}
-          
+
                   <Exit />
-              
-               
                 </div>
-                
               }
             />
             <Route
@@ -250,7 +322,7 @@ function App() {
                 <div>
                   {/* Pass the creation date to the Stats component */}
                   <Stats
-                  tareas={tareas}
+                    tareas={tareas}
                     fecha={
                       tareas.length > 0 ? tareas[tareas.length - 1].fecha : null
                     }
@@ -258,7 +330,6 @@ function App() {
 
                   <Exit />
                 </div>
-               
               }
             />
             <Route
@@ -281,8 +352,8 @@ function App() {
                       //   nombreUsuario={nombreUsuario}
                       //   setNombreUsuario={setNombreUsuario}
                     />
-                    
-                  <Exit />
+
+                    <Exit />
                   </h1>
                 </div>
               }
@@ -295,21 +366,6 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // App.js
 // import React, { useState, useEffect } from "react";
@@ -560,34 +616,6 @@ export default App;
 
 // export default App;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // App.js ENTREGA¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
 // import React, { useState, useEffect } from "react";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -813,38 +841,6 @@ export default App;
 // }
 
 // export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // EL FUNCIONA!!!!!!!!!!
 //   return (

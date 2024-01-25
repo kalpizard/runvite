@@ -10,7 +10,7 @@ import {
 } from "react-swipeable-list";
 import "react-swipeable-list/dist/styles.css";
 import { formatearFecha } from "../components/helpers";
-import Icono1 from "../imgs/dificultad_1.png";
+import Icono1 from "../imgs/dificultad1.svg";
 import Icono2 from "../imgs/dificultad_2.png";
 import Icono3 from "../imgs/dificultad_3.png";
 
@@ -32,20 +32,25 @@ const Tarea = ({ tarea, setTareaEditar, eliminarTarea }) => {
     if (dificultad == 3) {
       console.log(dificultad);
       Swal.fire({
-        title: '¡Cuidado!',
-        text: 'Esta tarea tiene dificultad 3. ¿Estás seguro de eliminarla?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        cancelButtonColor: '#3085d6',
-        confirmButtonText: 'Sí, eliminar',
-        cancelButtonText: 'Cancelar',
+        title: 'Good Job!',
+        text: 'La tarea compleja fue eliminada.',
+        icon: 'success',
+        timer: 3000, // Tiempo en milisegundos (en este caso, 3 segundos)
+        showConfirmButton: false, // Oculta el botón de confirmación
         
       });
       eliminarTarea(id)
       return null
     }
 
+    Swal.fire({
+      title: '',
+      text: 'La tarea compleja fue eliminada.',
+      icon: 'success',
+      timer: 2000, // Tiempo en milisegundos (en este caso, 3 segundos)
+      showConfirmButton: false, // Oculta el botón de confirmación
+      
+    });
     eliminarTarea(id)
     
   };
@@ -73,15 +78,13 @@ const Tarea = ({ tarea, setTareaEditar, eliminarTarea }) => {
           <div className="contenido-gasto">
             <img
               src={diccionarioIconos[dificultad]}
-              alt={`icono-dificultad-${dificultad}`}
+              alt={`nivel${dificultad}`}
             />
 
             <div className="descripcion gasto">
               <p className="nombre">{nombre}</p>
               <p className="descripcion">{descripcion}</p>
-              <p className="fecha">
-                Agregado el: <span>{formatearFecha(fecha)}</span>
-              </p>
+             
             </div>
           </div>
         </div>

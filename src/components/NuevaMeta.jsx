@@ -9,8 +9,6 @@ const NuevaMeta = ({
   meta,
   setMeta,
   setIsValidMeta,
-  fecha,
-  setFecha, // Agregar setFecha como prop
 }) => {
   const [mensaje, setMensaje] = useState("");
   const regex = /^[A-Za-záéíóúÁÉÍÓÚ\s]{3,}$/;
@@ -31,9 +29,8 @@ const NuevaMeta = ({
 
     setMensaje("");
     setIsValidMeta(true);
-    
+
     // Actualizar el estado 'fecha' con el valor de 'meta'
-    setFecha(Date.now()); // Puedes reemplazar Date.now() con el valor de 'meta' si es necesario
   };
 
   return (
@@ -75,9 +72,6 @@ const NuevaMeta = ({
 };
 
 export default NuevaMeta;
-
-
-
 
 // import React, { useState } from "react";
 // import { formatearFecha } from "../components/helpers";
@@ -156,15 +150,6 @@ export default NuevaMeta;
 
 // export default NuevaMeta;
 
-
-
-
-
-
-
-
-
-
 // // NuevaMeta.js
 // import React, { useState } from "react";
 // import { formatearFecha } from "../components/helpers"; // Make sure to import formatearFecha
@@ -180,9 +165,6 @@ export default NuevaMeta;
 //   const [mensaje, setMensaje] = useState("");
 //   const regex = /^[A-Za-záéíóúÁÉÍÓÚ\s]{3,}$/;
 //   const regixUser = /^[a-zA-Z0-9_]{3,16}$/;
-
-  
-  
 
 //   // FUNCION FUNCION PARA ADMINISTRAR
 //   const handleMeta = (e) => {
@@ -201,8 +183,6 @@ export default NuevaMeta;
 //     setIsValidMeta(true);
 //     // console.log(typeof nombreUsuario);
 //   };
-
-
 
 //   return (
 //     <div className="contenedor-meta">
@@ -248,6 +228,3 @@ export default NuevaMeta;
 // };
 
 // export default NuevaMeta;
-
-
-
