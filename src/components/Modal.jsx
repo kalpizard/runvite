@@ -84,12 +84,6 @@ const Modal = ({
 
   return (
     <div>
-      {currUser ? (
-        // Estructura que se muestra cuando mostrarEstructura es true
-        <h1>Hay alguien loggeado</h1>
-
-        
-      ) : (
         <div className="modal">
       <div className="close-modal" style={{ textAlign: "right" }}>
         <svg
@@ -157,7 +151,6 @@ const Modal = ({
       </form>
       {mensaje && <p>{mensaje}</p>}
     </div>
-      )}
     </div>
 
     

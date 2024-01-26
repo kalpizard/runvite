@@ -2,20 +2,11 @@
 // import { useState } from 'react';
 // import './App.css';
 
-
-
-
-
-
-
-
-
 // import React from 'react';
 
 // import React, { useState } from 'react';
 // import User from './components/User';
 // import { useNavigate } from 'react-router-dom';
-
 
 // // import PrivateText from './components/PrivateText';
 
@@ -30,21 +21,21 @@
 // };
 
 // export default Registration;
-import { useState } from 'react';
+import { useState } from "react";
 // import User from './components/User';
 // ... restante del código ...
 
 const Registration = () => {
   const [currUser, setCurrUser] = useState(null);
+  console.log(currUser);
+  const storedData = localStorage.getItem("data");
+  setCurrUser(storedData);
 
   return (
     <fieldset>
-
-  
-    <div className="App">
-      <User currUser={currUser} setCurrUser={setCurrUser} />
-    </div>
-
+      <div className="App">
+        <User currUser={currUser} setCurrUser={setCurrUser} />
+      </div>
     </fieldset>
   );
 };

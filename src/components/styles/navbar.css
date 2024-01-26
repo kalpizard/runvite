@@ -1,6 +1,6 @@
 .navigation {
     display: flex;
-    background-color: rgb(1, 10, 2); /* Corrected syntax for background-color */
+    background-color:#042a67; /* Corrected syntax for background-color */
     padding: 13px;
     justify-content: flex-end;
   }

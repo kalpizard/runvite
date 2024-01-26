@@ -1,9 +1,10 @@
 
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup = ({ setCurrUser, setShow }) => {
   const formRef = useRef();
-
+  const navigate = useNavigate();
   const signup = async (userInfo) => {
     const url = "http://localhost:3000/signup";
     try {
@@ -35,6 +36,7 @@ const Signup = ({ setCurrUser, setShow }) => {
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
     
+
     // Validate password length
     if (data.password.length < 6) {
       // Display an error message or handle it as needed
@@ -42,15 +44,22 @@ const Signup = ({ setCurrUser, setShow }) => {
       return;
     }
     
+    
     const userInfo = {
-      user: { email: data.email, password: data.password },
+      user: { email: data.email, password: data.password, user_name: data.name},
     };
 
+    console.log(userInfo);
+
     // Call signup function only if password length is valid
-    await signup(userInfo);
+   await signup(userInfo);
+
+  
     
     // Reset the form
     e.target.reset();
+
+    navigate("/navbar/home");
   };
   
   const handleClick = (e) => {
@@ -61,6 +70,8 @@ const Signup = ({ setCurrUser, setShow }) => {
   return (
     <div className="signup-style">
       <form ref={formRef} onSubmit={handleSubmit}>
+        Name : <input type="text" name="name" placeholder="name" />
+        <br/>
         Email: <input type="email" name="email" placeholder="email" />
         <br />
         Password:{" "}

@@ -1,5 +1,5 @@
 .header {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(216, 136, 136);
   }
   
   .agregarTarea {
@@ -14,12 +14,43 @@
     background-color: rgb(0, 0, 0);
   }
   
+
   .exit_button {
     position: fixed;
     bottom: 10px;
     left: 80px;
     cursor: pointer;
-  }
+    height: 60px; /* Ajusta la altura según tus necesidades */
+    width: 120px; /* Ajusta el ancho para alargar el botón */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px; /* Ajusta el margen inferior según tus necesidades */
+}
+
+.exit_button_2 {
+    background-color: #9b5de5; /* Agrega el color morado */
+    border: none; /* Elimina el borde si no lo deseas */
+    color: white; /* Ajusta el color del texto según el fondo */
+    font-size: 20px;
+    padding: 10px; /* Ajusta el relleno según tus necesidades */
+    transition: background-color 0.3s; /* Agrega una transición para suavizar el cambio de color en hover */
+}
+
+.exit_button_2:hover {
+    background-color: #7643ad; /* Cambia el color en hover según tus preferencias */
+}
+
+
+
+
+
+
+
+
+
+
+
   
   .fielset {
     width: 50px;
@@ -35,9 +66,9 @@
   .signup {
     width: 50%;
     margin: 0 auto; /* Puedes ajustar esto según tus necesidades */
+  
   }
   
   .center-text {
     text-align: center;
   }
-  

@@ -30,6 +30,7 @@ body {
 
 .contenedor-meta-dos-columnas {
   display: flex;
+  
   justify-content: space-between;
 }
 
@@ -152,11 +153,13 @@ body {
   background-color: #000;
   color: #fff;
   padding: 10px 300px;
-  font-size: 20px;
+  font-size: 24px;
   height: 50px;
   border: none;
   border: 1px solid #ffffff;
   margin-top: 30px;
+  font-family: 'Bebas Neue', sans-serif;
+  
 }
 
 .start-button:hover {
@@ -180,7 +183,7 @@ padding: 40px;
 .foot{
 background-color: #000000;
 
-padding-bottom: 120px;
+padding-bottom: 70px;
 
 background-image: url('./imgs/footer3.jpg');
 margin-top: 210px;
@@ -227,11 +230,14 @@ margin-top: 210px;
   font-weight: bold;
   font-size: 30px;
 }
-
 .not-registered {
   text-decoration: none;
   font-size: 24px;
   color: rgb(0, 132, 255);
+  font-weight: bold; /* Hacer el texto más grueso y aplicar negrita */
+
+
+
 }
 
 
@@ -341,7 +347,7 @@ header h1 {
   font-size: 1.6rem;
 }
 .formulario input[type="submit"] {
-  background-color: #399ade;
+  background-color:#042a67;
   border: none;
   padding: 1rem;
   text-align: center;
@@ -360,7 +366,7 @@ header h1 {
   }
 }
 .formulario input[type="submit"]:hover {
-  background-color: #042a67;
+  background-color:  #399ade;
   cursor: pointer;
 }
 
@@ -391,12 +397,14 @@ header h1 {
 }
 
 .contenedor {
-  width: 90%;
-  max-width: 80rem;
+  width: 70%;
+  background-color: ;
+  max-width: 70rem;
   margin: 0 auto;
+ 
 }
 .contenedor-presupuesto {
-  margin-top: -5rem;
+  margin-top: -3rem;
 
   display: flex;
   justify-content: space-between;
@@ -444,7 +452,7 @@ header h1 {
   color: var(--azul);
 }
 .reset-app {
-  border: none;
+  /* border: none;
   background-color: #db2777;
   padding: 1rem;
   width: 100%;
@@ -455,10 +463,24 @@ header h1 {
   border-radius: 1rem;
   transition-property: background-color;
   transition-duration: 300ms;
-  font-size: 20px;
+  font-size: 20px; */
+
+
+
+  background-color: #e74c3c; /* Color de fondo rojo */
+  color: #fff; /* Texto en color blanco */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Esquinas redondeadas */
+  cursor: pointer; /* Cursor al pasar el ratón */
+ transition: background-color 0.3s ease; /* Efecto de transición en el cambio de color de fondo */
+ width: 300px; /* Ancho del botón */
+
+
 }
 .reset-app:hover {
-  background-color: #c71465;
+  background-color: #c0392b; /* Cambio de color de fondo al pasar el ratón */
   cursor: pointer;
 }
 
@@ -613,7 +635,7 @@ body .modal {
 }
 
 .CircularProgressbar .CircularProgressbar-text {
-  font-size: 1rem !important;
+  font-size: rem !important;
 }
 
 /*** SWIPE LIST OVERRIDES **/
@@ -664,9 +686,24 @@ font-family: 'Archivo Black', sans-serif;
 
 
 .planifica{
-font-size: 50px;
+font-size: 40px;
 font-family: 'Archivo Black', sans-serif;
 
+background-image: url('/src/imgs/clouds1.avif');
+padding-bottom: 100px;
+}
+
+
+.imagenfooter{
+  height: 60px;
+  width: 200px;
+  background-color: #000000;
+color: white;
+font-size: 30px;
+font-family: 'Bebas Neue', sans-serif;
+padding-top: 20px;
+padding-left: 60px;
 
 
 }
+

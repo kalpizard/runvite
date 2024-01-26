@@ -6,7 +6,7 @@
   
 
   header {
-    background-color: #5caae2;
+    background-color:#4eaeec;
   }
   
   .agregarTareas {
@@ -21,13 +21,30 @@
     background-color: aqua;
   }
   
+ 
   .exit_button {
-    position: fixed; /* Establece la posición fija para que se mantenga en su lugar incluso al hacer scroll */
-    bottom: 10px; /* Ajusta la distancia desde la parte inferior de la pantalla */
-    left: 80px; /* Ajusta la distancia desde el borde izquierdo de la pantalla */
-    cursor: pointer; /* Indica que el elemento es interactivo */
+    position: fixed;
+    bottom: 10px;
+    left: 80px;
+    cursor: pointer;
+    height: 60px; /* Ajusta la altura según tus necesidades */
+    width: 20px; /* Ajusta el ancho para alargar el botón */
+   
+}
+
+.exit_button_2 {
+ 
+    background-color: #9b5de5; /* Agrega el color morado */
+    border: none; /* Elimina el borde si no lo deseas */
+    color: white; /* Ajusta el color del texto según el fondo */
+ font-size: 20px;
+ margin-bottom: 40px;
+ padding-bottom: 40px;
+
   }
-  
+
+
+
   fieldset {
     width: 50%;
     margin: 0 auto; /* Para centrar horizontalmente */

@@ -16,7 +16,6 @@ const Options = ({
 }) => {
    
    const navigate = useNavigate(); // Cambiado a useNavigate
-
   return (
     <div>
       <Profile 

@@ -25,7 +25,15 @@ const Login = ({ setCurrUser, setShow }) => {
       }
 
       localStorage.setItem("token", response.headers.get("Authorization"));
+      //RESETING AFTER LOGGING
+      localStorage.removeItem("goal");
+      localStorage.removeItem("meta");
+ 
+      
+
       setCurrUser(data);
+
+      localStorage.setItem('data', JSON.stringify(data));
       navigate("/navbar/home");
     } catch (error) {
       console.error("Error during login:", error.message);
@@ -66,14 +74,24 @@ const Login = ({ setCurrUser, setShow }) => {
           <input type="email" name="email" placeholder="email" required />
           <br />
           <label>Password: </label>
-          <input type="password" name="password" placeholder="password" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            required
+          />
           <br />
-          <input type="submit" value={loading ? "Logging in..." : "Login"} className="start-button" disabled={loading} />
+          <input
+            type="submit"
+            value={loading ? "Logging in..." : "Login"}
+            className="start-button"
+            disabled={loading}
+          />
         </form>
 
         <br />
         <div className="signup center-text">
-          <span>Not registered yet,{" "}</span>
+          <span className="not-yet">Not registered yet, </span>
           <a href="#signup" className="not-registered" onClick={handleClick}>
             <strong>Signup</strong>
           </a>{" "}

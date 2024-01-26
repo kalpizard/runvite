@@ -20,7 +20,7 @@ const StartButton = () => {
       </div> */}
 
       <button className='start-button' onClick={handleButtonClick}>
-        Comenzar 
+      Start 
       </button>
     </div>
   );

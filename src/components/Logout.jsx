@@ -1,6 +1,8 @@
 import React from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Logout = ({ setCurrUser }) => {
+  const navigate = useNavigate();
   const logout = async () => {
     try {
       const response = await fetch("http://localhost:3000/logout", {
@@ -17,6 +19,7 @@ const Logout = ({ setCurrUser }) => {
       }
 
       localStorage.removeItem("token");
+      localStorage.removeItem("data");
       setCurrUser(null);
     } catch (error) {
       console.error("Error during logout:", error.message);
@@ -26,6 +29,7 @@ const Logout = ({ setCurrUser }) => {
   const handleClick = (e) => {
     e.preventDefault();
     logout();
+    navigate("/");
   };
 
   return (

@@ -7,10 +7,13 @@ function Footer() {
       <footer  className='foot'>
 
 
+<div className='imagenfooter'>
+
+     <p>Version 1.0.0</p>
+
+</div>
 
 
-
-      Footer
       </footer>
       
       
