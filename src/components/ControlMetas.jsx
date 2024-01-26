@@ -36,8 +36,8 @@ const ControlMetas = ({
         <button className="reset-app" type="button" onClick={handleResetApp}>
           REINICIAR
         </button>
-        <p>
-          <span>En progreso: </span>
+        <p className="span-meta">
+          <span className="span-meta">In progress: </span>
           {meta}
         </p>
       </div>

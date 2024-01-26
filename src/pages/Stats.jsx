@@ -23,7 +23,7 @@ const Stats = ({ tareas, fecha }) => {
         </div>
 
         <div className="des-stats">
-          <h1>Tu primera tarea comenzó</h1>
+          <h1>Your first task has begun!</h1>
         </div>
       </div>
       <div className="div-stats">
@@ -36,7 +36,7 @@ const Stats = ({ tareas, fecha }) => {
         </div>
 
         <div className="des-stats">
-          <h1>Tareas Pendientes</h1>
+          <h1>Pending Tasks</h1>
         </div>
       </div>
 

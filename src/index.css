@@ -7,6 +7,8 @@ body {
 }
 .gasto {
   margin-bottom: rem; /* Ajusta el valor según tus necesidades */
+
+  width: 76%;
 }
 
 
@@ -205,7 +207,7 @@ margin-top: 210px;
 .form-login input[type='submit'] {
   display: block;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 24px;
   border: 2px solid #ccc;
   padding: 8px;
   width: 90%;
@@ -526,7 +528,7 @@ main {
   align-items: center;
   gap: 2rem;
   margin-bottom: 2rem;
-  width: 100%;
+
 }
 
 .cantidad-gasto {
@@ -578,10 +580,12 @@ main {
   position: fixed;
   bottom: 5rem;
   right: 5rem;
+  z-index: 9999; /* Un valor alto para asegurar que esté sobre otros elementos */
+ 
 }
 
 .nuevo-gasto img {
-  width: 5rem;
+  width: 7rem;
 }
 .nuevo-gasto img:hover {
   cursor: pointer;
@@ -640,17 +644,29 @@ body .modal {
 
 /*** SWIPE LIST OVERRIDES **/
 .swipe-action__leading {
-  background-color: var(--azul);
+  background-color: #db2777;
+
   color: var(--blanco);
   margin-bottom: 2rem;
-  width: 5px;
+  width: 20px; /* Ajusta el ancho según tus necesidades */
+  padding: 0 5px; /* Ajusta el padding según tus necesidades */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .swipe-action__trailing {
-  background-color: #db2777;
+  background-color: var(--azul);
   margin-bottom: 2rem;
   color: var(--blanco);
+  width: 20px; /* Ajusta el ancho según tus necesidades */
+  padding: 0 5px; /* Ajusta el padding según tus necesidades */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  margin-left: auto;
+  margin-right: auto;
+  width: 140%;
 }
+
 
 .swipeable-list .swipe-action {
   display: flex;
@@ -658,6 +674,7 @@ body .modal {
   align-items: center;
   font-size: 2.4rem;
   text-align: right;
+  
 }
 
 .gasto {
@@ -666,7 +683,7 @@ body .modal {
   align-items: center;
    /* Ajusta el espacio entre elementos según tus necesidades */
   margin-bottom: rem; /* Ajusta el margen inferior según tus necesidades */
-  width:50%;
+  width:80%;
   margin-left: 200px; /* No hay margen izquierdo en dispositivos móviles */
 margin: 10 auto;
   @media only screen and (min-width: 600px) {
@@ -678,10 +695,10 @@ margin: 10 auto;
 
 /* 
 ############################################# */
-.no-hay{
-font-size: 40px;
-font-family: 'Archivo Black', sans-serif;
-
+.no-hay {
+  font-size: 40px;
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
 }
 
 
@@ -691,6 +708,7 @@ font-family: 'Archivo Black', sans-serif;
 
 background-image: url('/src/imgs/clouds1.avif');
 padding-bottom: 100px;
+text-transform: uppercase;
 }
 
 
@@ -707,3 +725,11 @@ padding-left: 60px;
 
 }
 
+
+
+.span-meta{
+
+font-size: 30px;
+
+
+}

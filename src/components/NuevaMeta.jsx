@@ -1,8 +1,8 @@
+
 import React, { useState } from "react";
 import { formatearFecha } from "../components/helpers";
 import Profile from "../components/Profile";
 import { useLocation } from "react-router-dom";
-import Footer from "../components/Footer";
 
 const NuevaMeta = ({
   nombreUsuario,
@@ -12,26 +12,42 @@ const NuevaMeta = ({
   setIsValidMeta,
 }) => {
   const [mensaje, setMensaje] = useState("");
-  const regex = /^[A-Za-záéíóúÁÉÍÓÚ\s]{3,}$/;
-
   const location = useLocation();
   const token = localStorage.getItem("token");
 
   const handleMeta = (e) => {
     e.preventDefault();
 
-    if (!regex.test(meta)) {
-      setMensaje("No es una meta válida");
+    const trimmedMeta = meta.trim(); // Trim any leading or trailing whitespaces
+
+    const MAX_CHARACTERS = 20;
+
+    // ... (resto de tu código)
+
+    if (!trimmedMeta) {
+      // If meta is empty, display an error message
+      setMensaje("La meta no puede estar vacía");
       setTimeout(() => {
         setMensaje("");
       }, 3000);
       return;
     }
 
+    if (trimmedMeta.length > MAX_CHARACTERS) {
+      // If meta exceeds the character limit, display an error message
+      setMensaje(`La meta no puede tener más de ${MAX_CHARACTERS} caracteres`);
+      setTimeout(() => {
+        setMensaje("");
+      }, 3000);
+      return;
+    }
+
+    // Proceed with setting the message and updating the state
     setMensaje("");
     setIsValidMeta(true);
 
-    // Actualizar el estado 'fecha' con el valor de 'meta'
+    // Update the state 'fecha' with the value of 'meta'
+    // (You might want to include the logic for updating 'fecha' here)
   };
 
   return (
@@ -51,11 +67,11 @@ const NuevaMeta = ({
         </div> */}
 
         <div className="campo">
-          <label htmlFor="metaInput">Definir Meta:</label>
+          <label htmlFor="metaInput">Name Your Objective:</label>
           <input
             className="nueva-meta"
             type="text"
-            placeholder="añade el nombre de la meta"
+            placeholder="Enter Your Goal Name"
             id="metaInput"
             value={meta}
             onChange={(e) => setMeta(String(e.target.value))}
@@ -70,19 +86,11 @@ const NuevaMeta = ({
         <Profile nombreUsuario={nombreUsuario} />
       )}
 
-      <div>
-        <Footer />
-      </div>
+      <div></div>
     </div>
   );
 };
 
 export default NuevaMeta;
-
-
-
-
-
-
 
 

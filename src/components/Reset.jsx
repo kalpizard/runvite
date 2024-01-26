@@ -21,7 +21,7 @@ const Reset = ({
     return (
         <div className="contenido-meta">
             <button className="reset-app" type="button" onClick={handleResetApp}>
-                REINICIAR
+            
             </button>
         </div>
     );

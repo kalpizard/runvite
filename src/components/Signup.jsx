@@ -44,7 +44,7 @@ const Signup = ({ setCurrUser, setShow }) => {
       return;
     }
     
-    
+    localStorage.setItem('data', JSON.stringify(data));
     const userInfo = {
       user: { email: data.email, password: data.password, user_name: data.name},
     };
@@ -68,7 +68,7 @@ const Signup = ({ setCurrUser, setShow }) => {
   };
   
   return (
-    <div className="signup-style">
+    <div className="form-signup">
       <form ref={formRef} onSubmit={handleSubmit}>
         Name : <input type="text" name="name" placeholder="name" />
         <br/>

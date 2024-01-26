@@ -10,7 +10,7 @@ import {
 } from "react-swipeable-list";
 import "react-swipeable-list/dist/styles.css";
 import { formatearFecha } from "../components/helpers";
-import Icono1 from "../imgs/dificultad1.svg";
+import Icono1 from "../imgs/dificultad_1.png";
 import Icono2 from "../imgs/dificultad_2.png";
 import Icono3 from "../imgs/dificultad_3.png";
 
@@ -45,7 +45,7 @@ const Tarea = ({ tarea, setTareaEditar, eliminarTarea }) => {
 
     Swal.fire({
       title: '',
-      text: 'La tarea compleja fue eliminada.',
+      text: 'Eliminado exitosamente.',
       icon: 'success',
       timer: 2000, // Tiempo en milisegundos (en este caso, 3 segundos)
       showConfirmButton: false, // Oculta el botón de confirmación
@@ -62,14 +62,14 @@ const Tarea = ({ tarea, setTareaEditar, eliminarTarea }) => {
         leadingActions={
           <LeadingActions>
             <SwipeAction onClick={() => congratsTask(id)} destructive={true}>
-              Borrar
+              Delete
             </SwipeAction>
           </LeadingActions>
         }
         trailingActions={
           <TrailingActions>
             <SwipeAction onClick={() => setTareaEditar(tarea)}>
-              Editar
+              Edit
             </SwipeAction>
           </TrailingActions>
         }

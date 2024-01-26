@@ -21,7 +21,7 @@ import Modal from "./components/Modal";
 import "./index.css";
 import "./components/styles/home.css";
 import "./components/styles/navbar.css";
-
+import iconoNuevaMeta from  './imgs/add.png';
 import { LeadingActions } from "react-swipeable-list";
 import { object } from "prop-types";
 // import ProgressBar1 from "./components/ProgressBar1";
@@ -120,7 +120,7 @@ function App() {
       const userData = JSON.parse(storedData);
 
       // Ahora, puedes acceder a la propiedad 'user_name' del objeto
-      const userName = userData.user_name;
+      const userName = userData.user_name != null? userData.user_name :  userData.name  ;
 
       console.log(userName);
       setNombreUsuario(userName);
@@ -139,7 +139,7 @@ function App() {
       }
 
       console.log(goalStorage);
-    }, 500);
+    }, 2000);
   }, []);
 
   // Uncomment the function
@@ -227,54 +227,40 @@ function App() {
                     tareas={tareas}
                     setTareas={setTareas}
                   />
+
+
+
+                  
                   {isValidMeta && (
+
+
+
+
                     <>
+
+
+
+
                       <main>
+
+<div className="nuevo-gasto">
+<img
+
+src={iconoNuevaMeta}
+onClick={handleNuevaTareaClick}
+/>
+
+</div>
+
                         <ListadoTareas
                           tareas={tareas}
                           setTareaEditar={setTareaEditar}
                           eliminarTarea={eliminarTarea}
+
                         />
                       </main>
-                      <div className="nuevo-gasto">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="agregarTareas"
-                          width="100"
-                          height="100"
-                          viewBox="0 0 24 24"
-                          strokeWidth="3"
-                          stroke="#009988"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          onClick={handleNuevaTareaClick}
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M12 5l0 14" />
-                          <path d="M5 12l14 0" />
-                        </svg>
-                      </div>
+                   
 
-                      {/* <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="agregarTareas"
-                          width="100"
-                          height="100"
-                          viewBox="0 0 24 24"
-                          strokeWidth="3"
-                          stroke="#009988"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          onClick={handleNuevaTareaClick}
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M12 5l0 14" />
-                          <path d="M5 12l14 0" />
-                        </svg>
-                      </div> */}
                     </>
                   )}
                   {modal && (

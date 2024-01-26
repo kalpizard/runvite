@@ -18,7 +18,7 @@ const Exit = () => {
       {token ? (
         null
       ) : (
-        <button className='exit_button_2' onClick={handleButtonClick}>ir a atrás</button>
+        <button className='exit_button_2' onClick={handleButtonClick}>Go back</button>
       )}
       
     </div>

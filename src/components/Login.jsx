@@ -55,6 +55,8 @@ const Login = ({ setCurrUser, setShow }) => {
 
     await login(userInfo);
     e.target.reset();
+
+    location.reload();
   };
 
   const handleClick = (e) => {
