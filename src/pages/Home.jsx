@@ -1,46 +1,62 @@
-// // Home.js
-// import React from "react";
 
-// function Home() {
-//   return (
-//     <div>
-//       <h1>Home aquí</h1>
-//     </div>
-//   );
-// }
-
-// export default Home;
-
-// Home.js
-// import React from "react";
-// import { useLocation } from "react-router-dom";
-
-// function Home() {
-//   const location = useLocation();
-
-//   return (
-//     <div>
-//       <h1>Home aquí</h1>
-//       <p>Ruta actual: {location.pathname}</p>
-//     </div>
-//   );
-// }
-
-// export default Home;
-
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import NuevaMeta from "../components/NuevaMeta";
+import ControlMetas from "../components/ControlMetas";
+import Progress from "../components/Progress";
 
 
-function Home() {
-  const location = useLocation();
+import Footer from "../components/Footer";
+const Home = ({
+  meta,
+  setMeta,
+  isValidMeta,
+  setIsValidMeta,
+  nombreUsuario,
+  setNombreUsuario,
+  setTareas
+}) => {
+//USEFECT jalar metas y tareas del usuario 
+//get al backend y paso el id del usuario, debe estar autenticado 
 
   return (
-    <div>
-      <h1>Home aquí</h1>
-      {/* <p>Ruta actual: {location.pathname}</p> */}
-    </div>
+    <header>
+<Progress/>
+      <h1 className="planifica">The future for goal planning.</h1>
+    
+
+      {isValidMeta ? (
+        <div>
+          <ControlMetas
+          nombreUsuario={nombreUsuario}
+          setNombreUsuario={setNombreUsuario}
+           tareas={setTareas}
+           setTareas={setTareas}
+           meta={meta} 
+           setMeta={setMeta}
+           setIsValidMeta={setIsValidMeta}
+           />
+        </div>
+      ) : (
+        <NuevaMeta
+          nombreUsuario={nombreUsuario}
+          setNombreUsuario={setNombreUsuario}
+          meta={meta}
+          setMeta={setMeta}
+          isValidMeta={isValidMeta}
+          setIsValidMeta={setIsValidMeta}
+          
+        />
+       
+      )}
+    </header>
+    
+
   );
-}
+};
 
 export default Home;
+
+
+
+
+

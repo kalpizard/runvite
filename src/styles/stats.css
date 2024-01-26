@@ -1,0 +1,53 @@
+.stats-back {
+ 
+  height: vh;
+  width: 400px;
+  background-color: #f7f7f7;
+
+ margin: 0 auto;
+
+
+}
+
+  .circulo {
+    background-color: #ffffff;
+    color: #000000;
+    height: 300px;
+    width: 300px;
+    margin-top: 20px;
+   
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid #4f6868; /* Ajustar el color según sea necesario */
+  
+    border-top: 5px solid #4f6868; /* Ajustar el color según sea necesario */
+  
+  }
+  
+  .div-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 40px;
+    border-bottom: 2px solid #4f6868; /* Ajustar el color según sea necesario */
+  
+  
+ border-bottom: 5px solid #4f6868; /* Ajustar el color según sea necesario */  
+  }
+  
+  .des-stats {
+    display: flex;
+   
+  }
+  .stats {
+    font-size: 2.4rem; /* Ajusta el tamaño según tus necesidades */
+  }
+  
+  .fecha h2 {
+    font-size: 5.8rem; /* Ajusta el tamaño según tus necesidades */
+  }
+  

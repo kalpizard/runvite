@@ -1,0 +1,66 @@
+
+
+  
+  
+  
+  
+
+  header {
+    background-color:#4eaeec;
+  }
+  
+  .agregarTareas {
+    height: 40px;
+  }
+  
+  .cerrar-tarea {
+    justify-content: right;
+  }
+  
+  .modal {
+    background-color: aqua;
+  }
+  
+ 
+  .exit_button {
+    position: fixed;
+    bottom: 10px;
+    left: 80px;
+    cursor: pointer;
+    height: 60px; /* Ajusta la altura según tus necesidades */
+    width: 20px; /* Ajusta el ancho para alargar el botón */
+   
+}
+
+.exit_button_2 {
+ 
+    background-color: #9b5de5; /* Agrega el color morado */
+    border: none; /* Elimina el borde si no lo deseas */
+    color: white; /* Ajusta el color del texto según el fondo */
+ font-size: 20px;
+ margin-bottom: 40px;
+ padding-bottom: 40px;
+
+  }
+
+
+
+  fieldset {
+    width: 50%;
+    margin: 0 auto; /* Para centrar horizontalmente */
+  }
+  .center-form {
+    width: 50%; /* Puedes ajustar este valor según tus necesidades */
+    margin: 0 auto; /* Centra horizontalmente el formulario */
+  }
+  
+  .signup {
+    width: 50%;
+    margin: 0 auto; /* Para centrar horizontalmente */
+  }
+ 
+  .profile {
+    background-color: #ffffff;
+  }
+  
+  

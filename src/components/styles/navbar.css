@@ -1,0 +1,24 @@
+.navigation {
+    display: flex;
+    background-color:#042a67; /* Corrected syntax for background-color */
+    padding: 13px;
+    justify-content: flex-end;
+  }
+  
+  .navigation ul {
+    list-style-type: none;
+    margin: 0; /* Corrected typo from 'magin' to 'margin' */
+    padding: 0;
+    display: flex;
+    font-size: 30px;
+  }
+  
+  .navigation li {
+    margin-right: 15px;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+    color: #fff;
+  }
+  

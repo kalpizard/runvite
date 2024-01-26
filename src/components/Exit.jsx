@@ -5,13 +5,22 @@ import { useNavigate } from 'react-router-dom';
 const Exit = () => {
   const navigate = useNavigate();
 
+  const token = localStorage.getItem("token")
+
   const handleButtonClick = () => {
     navigate('/');
   };
 
+
+
   return (
     <div className='exit_button'>
-      <button onClick={handleButtonClick}>ir a atrás</button>
+      {token ? (
+        null
+      ) : (
+        <button className='exit_button_2' onClick={handleButtonClick}>Go back</button>
+      )}
+      
     </div>
   );
 };
