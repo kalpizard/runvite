@@ -1,4 +1,3 @@
-// App.js ENTREGA
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -10,21 +9,20 @@ import Stats from "./pages/Stats";
 import Home from "./pages/Home";
 import Options from "./pages/Options";
 import Footer from "./components/Footer";
-import "../src/styles/home.css";
-import "../src/styles/stats.css";
-
-import "../src/styles/navbar.css";
-import { generarId, formatearFecha } from "./components/helpers";
 import ListadoTareas from "./components/ListadoTareas";
 import Modal from "./components/Modal";
+import { generarId, formatearFecha } from "./components/helpers";
 
+import "../src/styles/home.css";
+import "../src/styles/stats.css";
+import "../src/styles/navbar.css";
 import "./index.css";
 import "./components/styles/home.css";
 import "./components/styles/navbar.css";
 import iconoNuevaMeta from  './imgs/add.png';
 import { LeadingActions } from "react-swipeable-list";
 import { object } from "prop-types";
-// import ProgressBar1 from "./components/ProgressBar1";
+
 function App() {
   const [nombreUsuario, setNombreUsuario] = useState(
     localStorage.getItem("nombreUsuario") ?? ""
@@ -41,7 +39,7 @@ function App() {
     const goalStorage = JSON.parse(itemStorage);
 
     if (!goalStorage || !goalStorage.goal) {
-      return { goal: { tasks: [] } }; // Return a default value if no data is found
+      return { goal: { tasks: [] } };
     }
     return goalStorage;
   };
@@ -63,27 +61,13 @@ function App() {
     }, 1000);
   }, [tareaEditar]);
 
-  // useEffect(()=>{
-  //   const preconfig1= "Estudio"
-  //   const task = {"Buscar carrera":"matricular la U"}
-
-  //   setGoal(preconfig1)
-
-  //   setTareas([...goal, task]);
-
-  // })
-
-  // console.log(goal)
-
-  // LOCAL_STORAGE_META
   useEffect(() => {
-    // Save the current value of 'meta' to localStorage
+    // LOCAL_STORAGE_META
     localStorage.setItem("meta", meta ?? "");
   }, [meta]);
 
-  //LOCAL_STORAGE_TAREA
   useEffect(() => {
-    // localStorage.setItem("tareas", JSON.stringify(tareas) ?? []);
+    // LOCAL_STORAGE_TAREA
     const goalStorage = getGoalFromStorage();
     setTimeout(() => {
       if (goalStorage.goal === undefined) {
@@ -99,13 +83,6 @@ function App() {
     const metaLS = localStorage.getItem("meta");
     const nombreUsuarioLS = localStorage.getItem("nombreUsuario") ?? "";
 
-    console.log(currUser);
-    // si viene nulo no tiene nombre de usuario,
-    // if (data.user_name !== null) {
-    //   localStorage.setItem("nombreUsuario", data.user_name);
-    // } else {
-    //   setIsValidMeta(true);
-    // }
     if (nombreUsuarioLS !== "" && metaLS !== null) {
       setIsValidMeta(true);
     }
@@ -113,16 +90,10 @@ function App() {
 
   useEffect(() => {
     if (tokenUser) {
-      // Obtén la cadena JSON almacenada en el localStorage
-      const storedData = localStorage.getItem("data"); // Sustituye 'tu_clave_de_almacenamiento' por la clave que hayas utilizado
-
-      // Convierte la cadena JSON a un objeto JavaScript
+      const storedData = localStorage.getItem("data");
       const userData = JSON.parse(storedData);
 
-      // Ahora, puedes acceder a la propiedad 'user_name' del objeto
-      const userName = userData.user_name != null? userData.user_name :  userData.name  ;
-
-      console.log(userName);
+      const userName = userData.user_name != null ? userData.user_name : userData.name;
       setNombreUsuario(userName);
     } else {
       localStorage.setItem("nombreUsuario", nombreUsuario ?? "");
@@ -137,20 +108,9 @@ function App() {
       } else {
         setTareas([]);
       }
-
-      console.log(goalStorage);
     }, 2000);
   }, []);
 
-  // Uncomment the function
-  // const handleNuevaTareaClick = () => {
-  //   setModal(true);
-  //   setTareaEditar({});
-
-  //   setTimeout(() => {
-  //     setAnimarModal(true);
-  //   }, 1000);
-  // };
   const handleNuevaTareaClick = () => {
     setModal(true);
     setTareaEditar({});
@@ -158,10 +118,9 @@ function App() {
   };
 
   const guardarTarea = (tarea) => {
-    const fechaActual = Date.now(); // Obtén la marca de tiempo actual
+    const fechaActual = Date.now();
 
     if (tarea.id) {
-      // actualizar
       const tareasActualizadas = tareas.map((tareaState) =>
         tareaState.id === tarea.id ? tarea : tareaState
       );
@@ -169,7 +128,7 @@ function App() {
       setTareaEditar({});
     } else {
       tarea.id = generarId();
-      tarea.fecha = fechaActual; // Utiliza la fecha actual como la fecha de la tarea
+      tarea.fecha = fechaActual;
       setTareas([...tareas, tarea]);
     }
 
@@ -181,17 +140,13 @@ function App() {
   };
 
   const eliminarTarea = (id) => {
-    // console.log('eliminando', id);
     const tareasActualizadas = tareas.filter((tarea) => tarea.id !== id);
-    //  console.log(tareasActualizadas);
     setTareas(tareasActualizadas);
   };
 
   const [logged, setLogged] = useState(false);
 
   useEffect(() => {
-    //VALIDATE IF THERE IS A USER LOGGED
-    //LEER DESDE EL LOCALSTORAGE EL USUARIO LOGUEADO
     if (setLogged(true)) {
     }
   }, []);
@@ -207,7 +162,6 @@ function App() {
                 <Header />
                 <StartButton />
                 <User currUser={currUser} setCurrUser={setCurrUser} />
-
                 <Footer />
               </div>
             }
@@ -228,39 +182,21 @@ function App() {
                     setTareas={setTareas}
                   />
 
-
-
-                  
                   {isValidMeta && (
-
-
-
-
                     <>
-
-
-
-
                       <main>
-
-<div className="nuevo-gasto">
-<img
-
-src={iconoNuevaMeta}
-onClick={handleNuevaTareaClick}
-/>
-
-</div>
-
+                        <div className="nuevo-gasto">
+                          <img
+                            src={iconoNuevaMeta}
+                            onClick={handleNuevaTareaClick}
+                          />
+                        </div>
                         <ListadoTareas
                           tareas={tareas}
                           setTareaEditar={setTareaEditar}
                           eliminarTarea={eliminarTarea}
-
                         />
                       </main>
-                   
-
                     </>
                   )}
                   {modal && (
@@ -273,7 +209,6 @@ onClick={handleNuevaTareaClick}
                       setTareaEditar={setTareaEditar}
                     />
                   )}
-
                   <Exit />
                 </div>
               }
@@ -282,14 +217,12 @@ onClick={handleNuevaTareaClick}
               path="stats"
               element={
                 <div>
-                  {/* Pass the creation date to the Stats component */}
                   <Stats
                     tareas={tareas}
                     fecha={
                       tareas.length > 0 ? tareas[tareas.length - 1].fecha : null
                     }
                   />
-
                   <Exit />
                 </div>
               }
@@ -308,13 +241,7 @@ onClick={handleNuevaTareaClick}
                       setNombreUsuario={setNombreUsuario}
                       tareas={tareas}
                       setTareas={setTareas}
-                      // tareas={tareas}
-                      // setTareas={setTareas}
-
-                      //   nombreUsuario={nombreUsuario}
-                      //   setNombreUsuario={setNombreUsuario}
                     />
-
                     <Exit />
                   </h1>
                 </div>
