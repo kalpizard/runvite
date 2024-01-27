@@ -1,6 +1,5 @@
-// Tarea.jsx
 import React from "react";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import {
   LeadingActions,
   SwipeableList,
@@ -23,36 +22,27 @@ const diccionarioIconos = {
 const Tarea = ({ tarea, setTareaEditar, eliminarTarea }) => {
   const { dificultad, nombre, descripcion, id, fecha } = tarea;
 
- 
-
-
   const congratsTask = (id) => {
-   
-
-    if (dificultad == 3) {
-      console.log(dificultad);
+    if (dificultad === 3) {
       Swal.fire({
         title: 'Good Job!',
         text: 'La tarea compleja fue eliminada.',
         icon: 'success',
         timer: 3000, // Tiempo en milisegundos (en este caso, 3 segundos)
         showConfirmButton: false, // Oculta el botón de confirmación
-        
       });
-      eliminarTarea(id)
-      return null
+      eliminarTarea(id);
+      return null;
     }
 
     Swal.fire({
       title: '',
       text: 'Eliminado exitosamente.',
       icon: 'success',
-      timer: 2000, // Tiempo en milisegundos (en este caso, 3 segundos)
+      timer: 2000, // Tiempo en milisegundos (en este caso, 2 segundos)
       showConfirmButton: false, // Oculta el botón de confirmación
-      
     });
-    eliminarTarea(id)
-    
+    eliminarTarea(id);
   };
 
   return (
@@ -84,7 +74,6 @@ const Tarea = ({ tarea, setTareaEditar, eliminarTarea }) => {
             <div className="descripcion gasto">
               <p className="nombre">{nombre}</p>
               <p className="descripcion">{descripcion}</p>
-             
             </div>
           </div>
         </div>

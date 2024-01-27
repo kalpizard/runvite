@@ -28,8 +28,6 @@ const Login = ({ setCurrUser, setShow }) => {
       //RESETING AFTER LOGGING
       localStorage.removeItem("goal");
       localStorage.removeItem("meta");
- 
-      
 
       setCurrUser(data);
 

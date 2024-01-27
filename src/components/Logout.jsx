@@ -3,6 +3,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 const Logout = ({ setCurrUser }) => {
   const navigate = useNavigate();
+
   const logout = async () => {
     try {
       const response = await fetch("http://localhost:3000/logout", {

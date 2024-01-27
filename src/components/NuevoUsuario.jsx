@@ -1,15 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const       NuevoUsuario =() => {
+const NuevoUsuario = () => {
   return (
     <div>
-
-
-        <h1>Nuevo usuario </h1>
-
-
+      <h1>Nuevo usuario</h1>
     </div>
-  )
+  );
 }
 
 export default NuevoUsuario;

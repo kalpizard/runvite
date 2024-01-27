@@ -1,6 +1,52 @@
 body {
   background-color: #399ade;
 }
+
+:root {
+  --azul: #3b82f6;
+  --blanco: #ffffff;
+  --gris-claro: #f5f5f5;
+  --gris: #94a3b8;
+  --gris-oscuro: #64748b;
+  --negro: #000;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.fijar {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.sombra {
+  box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.51);
+  -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.51);
+  background-color: var(--blanco);
+  padding: 1rem;
+  border-radius: 4.2rem;
+}
+
+header {
+  background-color: var(--azul);
+}
+
+header h1 {
+  padding: 3rem 0;
+  margin: 0;
+  color: var(--blanco);
+  text-align: center;
+
+  text-transform: uppercase;
+}
 .swipe-action__leading,
 .swipe-action__trailing {
   margin-bottom: 0rem; /* Ajusta el valor según tus necesidades */
@@ -11,15 +57,12 @@ body {
   width: 76%;
 }
 
-
 .descripcion.gasto p,
 .descripcion-gasto .categoria,
 .descripcion-gasto .nombre-gasto,
 .descripcion-gasto .fecha-gasto {
   font-size: 3.4rem; /* Ajusta el tamaño según tus necesidades */
 }
-
-
 
 .modal .formulario label,
 .modal .formulario input,
@@ -28,14 +71,11 @@ body {
   font-size: 3.5rem; /* Ajusta el tamaño según tus necesidades */
 }
 
-
-
 .contenedor-meta-dos-columnas {
   display: flex;
-  
+
   justify-content: space-between;
 }
-
 
 .title h1 {
   border: 20px solid transparent;
@@ -46,7 +86,6 @@ body {
   color: #ee1d1d;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
 
 .title h1 {
   border: 20px solid transparent; /* Ajusta el tamaño del borde según tus necesidades */
@@ -100,19 +139,12 @@ body {
   }
 }
 
-
-
-
-
-
-
 .encabezado {
-  background-image: url('./imgs/clouds1.avif');
+  background-image: url("./imgs/clouds1.avif");
   padding: 3px;
   display: flex;
   justify-content: center;
 }
-
 
 .div-button {
   border-top: 15px solid #8cc9f6;
@@ -127,7 +159,7 @@ body {
 }
 
 .portada {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: "Archivo Black", sans-serif;
   font-size: 20px;
 }
 
@@ -160,8 +192,7 @@ body {
   border: none;
   border: 1px solid #ffffff;
   margin-top: 30px;
-  font-family: 'Bebas Neue', sans-serif;
-  
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .start-button:hover {
@@ -174,22 +205,16 @@ body {
   background-color: #5caae2;
   width: 100%;
   margin: 0 auto;
-padding: 40px;
+  padding: 40px;
 }
 
+.foot {
+  background-color: #000000;
 
+  padding-bottom: 70px;
 
-
-
-
-.foot{
-background-color: #000000;
-
-padding-bottom: 70px;
-
-background-image: url('./imgs/footer3.jpg');
-margin-top: 210px;
-
+  background-image: url("./imgs/footer3.jpg");
+  margin-top: 210px;
 }
 
 .form-Login {
@@ -204,7 +229,7 @@ margin-top: 210px;
 }
 
 .form-Login input,
-.form-login input[type='submit'] {
+.form-login input[type="submit"] {
   display: block;
   margin: 0 auto;
   font-size: 24px;
@@ -213,14 +238,14 @@ margin-top: 210px;
   width: 90%;
 }
 
-.form-Login input[type='submit'] {
-  background-color: #4CAF50;
+.form-Login input[type="submit"] {
+  background-color: #4caf50;
   color: #fff;
   border: none;
   padding: 10px 20px;
 }
 
-.form-Login input[type='submit']:hover {
+.form-Login input[type="submit"]:hover {
   background-color: #45a049;
 }
 
@@ -237,74 +262,14 @@ margin-top: 210px;
   font-size: 24px;
   color: rgb(0, 132, 255);
   font-weight: bold; /* Hacer el texto más grueso y aplicar negrita */
-
-
-
 }
 
 
 
-/* 
-.w3-border{
-  margin-top: 0px;
-margin: 0 auto;;
-height: 60px;
-background-color:rgb(5, 5, 5);
-
-text-align: start;
-}
- */
 
 
 
 
-:root {
-  --azul: #3b82f6;
-  --blanco: #ffffff;
-  --gris-claro: #f5f5f5;
-  --gris: #94a3b8;
-  --gris-oscuro: #64748b;
-  --negro: #000;
-}
-
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-.fijar {
-  overflow: hidden;
-  height: 100vh;
-}
-
-.sombra {
-  box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.51);
-  -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.51);
-  -moz-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.51);
-  background-color: var(--blanco);
-  padding: 1rem;
-  border-radius: 4.2rem;
-  
-}
-
-header {
-  background-color: var(--azul);
-}
-
-header h1 {
-  padding: 3rem 0;
-  margin: 0;
-  color: var(--blanco);
-  text-align: center;
-
-  text-transform: uppercase;
-}
 
 .formulario {
   width: 95%;
@@ -313,8 +278,8 @@ header h1 {
 }
 @media (min-width: 768px) {
   .formulario {
-      padding: 5rem 0;
-      width: 60rem;
+    padding: 5rem 0;
+    width: 60rem;
   }
 }
 .formulario legend {
@@ -333,7 +298,6 @@ header h1 {
 }
 
 .formulario label {
-
   font-size: 2.8rem;
   text-align: center;
   margin-bottom: 2rem;
@@ -349,7 +313,7 @@ header h1 {
   font-size: 1.6rem;
 }
 .formulario input[type="submit"] {
-  background-color:#042a67;
+  background-color: #042a67;
   border: none;
   padding: 1rem;
   text-align: center;
@@ -363,12 +327,12 @@ header h1 {
 }
 @media (min-width: 768px) {
   .formulario input[type="submit"] {
-      display: block;
-      padding: 1rem 5rem;
+    display: block;
+    padding: 1rem 5rem;
   }
 }
 .formulario input[type="submit"]:hover {
-  background-color:  #399ade;
+  background-color: #399ade;
   cursor: pointer;
 }
 
@@ -395,17 +359,15 @@ header h1 {
   border-left: 5px solid #b91c1c;
   color: #b91c1c;
 }
-.alerta.success {
-}
+
 
 .contenedor {
   width: 70%;
   background-color: ;
   max-width: 70rem;
   margin: 0 auto;
- 
 }
-.contenedor-presupuesto {
+.contenedor-goal {
   margin-top: -3rem;
 
   display: flex;
@@ -422,51 +384,37 @@ header h1 {
 }
 @media (min-width: 768px) {
   .dos-columnas {
-      flex-direction: row;
-      align-items: center;
-      gap: 4rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
   }
   .dos-columnas > div {
-      width: 50%;
+    width: 50%;
   }
   .dos-columnas :first-child {
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
 }
-.formulario input[type="text"].nuevo-presupuesto, 
+.formulario input[type="text"].nuevo-presupuesto,
 .formulario input[type="number"].nuevo-presupuesto {
   font-size: 2.8rem;
   text-align: center;
 }
 
-
 @media (min-width: 768px) {
   .contenido-presupuesto p {
-      text-align: left;
+    text-align: left;
   }
 }
-.contenido-presupuesto p.negativo,
-.contenido-presupuesto p.negativo span {
-  color: #DC2626;
+.contenido-meta p.negativo,
+.contenido-meta p.negativo span {
+  color: #dc2626;
 }
 .contenido-presupuesto span {
   font-weight: 900;
   color: var(--azul);
 }
 .reset-app {
-  /* border: none;
-  background-color: #db2777;
-  padding: 1rem;
-  width: 100%;
-  text-align: center;
-  color: var(--blanco);
-  text-transform: uppercase;
-  font-weight: 900;
-  border-radius: 1rem;
-  transition-property: background-color;
-  transition-duration: 300ms;
-  font-size: 20px; */
-
 
 
   background-color: #e74c3c; /* Color de fondo rojo */
@@ -476,10 +424,8 @@ header h1 {
   border: none; /* Sin borde */
   border-radius: 5px; /* Esquinas redondeadas */
   cursor: pointer; /* Cursor al pasar el ratón */
- transition: background-color 0.3s ease; /* Efecto de transición en el cambio de color de fondo */
- width: 300px; /* Ancho del botón */
-
-
+  transition: background-color 0.3s ease; /* Efecto de transición en el cambio de color de fondo */
+  width: 300px; /* Ancho del botón */
 }
 .reset-app:hover {
   background-color: #c0392b; /* Cambio de color de fondo al pasar el ratón */
@@ -488,7 +434,6 @@ header h1 {
 
 main {
   padding-top: 10rem;
- 
 }
 
 .filtros .campo {
@@ -528,7 +473,6 @@ main {
   align-items: center;
   gap: 2rem;
   margin-bottom: 2rem;
-
 }
 
 .cantidad-gasto {
@@ -581,7 +525,6 @@ main {
   bottom: 5rem;
   right: 5rem;
   z-index: 9999; /* Un valor alto para asegurar que esté sobre otros elementos */
- 
 }
 
 .nuevo-gasto img {
@@ -616,7 +559,6 @@ main {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: ease-in;
-  
 }
 .modal label {
   color: var(--blanco);
@@ -667,25 +609,23 @@ body .modal {
   width: 140%;
 }
 
-
 .swipeable-list .swipe-action {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2.4rem;
   text-align: right;
-  
 }
 
 .gasto {
   display: flex;
   flex-direction: column; /* Cambia la dirección a columna en dispositivos móviles */
   align-items: center;
-   /* Ajusta el espacio entre elementos según tus necesidades */
+  /* Ajusta el espacio entre elementos según tus necesidades */
   margin-bottom: rem; /* Ajusta el margen inferior según tus necesidades */
-  width:80%;
+  width: 80%;
   margin-left: 200px; /* No hay margen izquierdo en dispositivos móviles */
-margin: 10 auto;
+  margin: 10 auto;
   @media only screen and (min-width: 600px) {
     /* Aplicar estilos específicos para dispositivos con un ancho mínimo de 600px */
     flex-direction: row; /* Vuelve a la dirección de fila en pantallas más grandes */
@@ -697,39 +637,30 @@ margin: 10 auto;
 ############################################# */
 .no-hay {
   font-size: 40px;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: "Archivo Black", sans-serif;
   text-align: center;
 }
 
+.planifica {
+  font-size: 40px;
+  font-family: "Archivo Black", sans-serif;
 
-.planifica{
-font-size: 40px;
-font-family: 'Archivo Black', sans-serif;
-
-background-image: url('/src/imgs/clouds1.avif');
-padding-bottom: 100px;
-text-transform: uppercase;
+  background-image: url("/src/imgs/clouds1.avif");
+  padding-bottom: 100px;
+  text-transform: uppercase;
 }
 
-
-.imagenfooter{
+.imagenfooter {
   height: 60px;
   width: 200px;
   background-color: #000000;
-color: white;
-font-size: 30px;
-font-family: 'Bebas Neue', sans-serif;
-padding-top: 20px;
-padding-left: 60px;
-
-
+  color: white;
+  font-size: 30px;
+  font-family: "Bebas Neue", sans-serif;
+  padding-top: 20px;
+  padding-left: 60px;
 }
 
-
-
-.span-meta{
-
-font-size: 30px;
-
-
+.span-meta {
+  font-size: 30px;
 }
