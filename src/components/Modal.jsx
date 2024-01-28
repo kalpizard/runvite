@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { generarId } from "./helpers";
 import Mensaje from "./Mensaje";
 
+
+
 const Modal = ({
   setModal,
   animarModal,
@@ -10,6 +12,7 @@ const Modal = ({
   tareaEditar,
   setTareaEditar,
 }) => {
+
   const [nombre, setNombre] = useState("");
   const [dificultad, setDificultad] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -26,14 +29,15 @@ const Modal = ({
       setDescripcion(tareaEditar.descripcion);
       setId(tareaEditar.id);
     }
-  }, []);
+  }, [tareaEditar]);
 
-  const closeModal = () => {
-    setTareaEditar({});
+ const closeModal = () => {
+    setModal(false);
     setAnimarModal(false);
+    setTareaEditar({});
     setTimeout(() => {
       setModal(false);
-    }, 1000);
+    }, 600);
   };
 
   const handleDificultadChange = (e) => {
@@ -49,7 +53,7 @@ const Modal = ({
 
     setTimeout(() => {
       setAnimarModal(true);
-    }, 1000);
+    }, 600);
   };
 
   const handleSubmit = (e) => {
@@ -59,7 +63,7 @@ const Modal = ({
       setMensaje("Tarea es obligatoria");
       setTimeout(() => {
         setMensaje("");
-      }, 3000);
+      }, 600);
       return;
     }
 
@@ -68,7 +72,7 @@ const Modal = ({
       dificultad,
       descripcion,
       id,
-    });
+    }); 
 
     setNombre("");
     setDificultad("");
@@ -80,7 +84,7 @@ const Modal = ({
   return (
     <div>
       <div className="modal">
-        <div className="close-modal" style={{ textAlign: "right" }}>
+        <div className="cerrar-modal" style={{ textAlign: "right" }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="icon icon-tabler icon-tabler-arrow-narrow-right"
@@ -101,13 +105,13 @@ const Modal = ({
             <path d="M15 8l4 4" />
           </svg>
         </div>
-        <form
+        <form 
           onSubmit={handleSubmit}
-          className={`formulario ${animarModal ? "animar" : "cerrar"}`}
+          className={`formulario ${animarModal ? "animar" : 'cerrar'}`}
         >
-          <legend>{tareaEditar.nombre ? "Edit" : "Create a new task"} </legend>
+          <legend>{tareaEditar.nombre ? "Edit" : 'Create a new task'} </legend>
           <div className="campo">
-            <label htmlFor="Nombre de la tarea">Task title</label>
+            <label htmlFor="tarea">Task title</label>
             <input
               id="tarea"
               type="text"
@@ -141,10 +145,10 @@ const Modal = ({
           </div>
           <input
             type="submit"
-            value={tareaEditar.nombre ? "edit" : "Create a new task"}
+            value={tareaEditar.nombre ? "Edit" : "Create a new task"}
           />
         </form>
-        {mensaje && <p>{mensaje}</p>}
+        {mensaje && <Mensaje mensaje={mensaje} />}
       </div>
     </div>
   );

@@ -11,7 +11,8 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
   };
 
   return (
-    <div className="no hay">
+    
+    <div className="listado-gastos contenedor">
       {Array.isArray(tareas) && tareas.length > 0 ? (
         <>
           {/* <p>{contadorTareasEliminadas ? `Tareas Eliminadas: ${contadorTareasEliminadas}` : ""}</p> */}

@@ -29,7 +29,7 @@
 }
 
 .exit_button_2 {
-    background-color: #9b5de5; /* Agrega el color morado */
+    background-color: #e27fad; /* Agrega el color morado */
     border: none; /* Elimina el borde si no lo deseas */
     color: white; /* Ajusta el color del texto según el fondo */
     font-size: 20px;
@@ -38,7 +38,7 @@
 }
 
 .exit_button_2:hover {
-    background-color: #7643ad; /* Cambia el color en hover según tus preferencias */
+    background-color:  #FFB6C1; /* Cambia el color en hover según tus preferencias */
 }
 
 

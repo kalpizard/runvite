@@ -24,7 +24,7 @@ const ControlMetas = ({
   };
 
   return (
-    <div className="contenedor-goal contenedor sombra dos-columnas">
+    <div className="contenedor-presupuesto contenedor sombra dos-columnas">
       <div>
         <CircularProgressbar value={porcentaje} />
       </div>

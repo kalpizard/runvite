@@ -25,7 +25,7 @@ const NuevaMeta = ({
       setMensaje("La meta no puede estar vacía");
       setTimeout(() => {
         setMensaje("");
-      }, 3000);
+      }, 600);
       return;
     }
 
@@ -33,7 +33,7 @@ const NuevaMeta = ({
       setMensaje(`La meta no puede tener más de ${MAX_CHARACTERS} caracteres`);
       setTimeout(() => {
         setMensaje("");
-      }, 3000);
+      }, 600);
       return;
     }
 

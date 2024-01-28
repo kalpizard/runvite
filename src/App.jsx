@@ -45,8 +45,8 @@ function App() {
   };
 
   const [meta, setMeta] = useState(localStorage.getItem("meta") ?? "");
-  const [currUser, setCurrUser] = useState(null);
   const [isValidMeta, setIsValidMeta] = useState(false);
+  const [currUser, setCurrUser] = useState(null);
   const [modal, setModal] = useState(false);
   const [animarModal, setAnimarModal] = useState(false);
   const [tareas, setTareas] = useState([]);
@@ -58,7 +58,7 @@ function App() {
 
     setTimeout(() => {
       setAnimarModal(true);
-    }, 1000);
+    }, 600);
   }, [tareaEditar]);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ function App() {
         goalStorage.goal.tasks = tareas;
         localStorage.setItem("goal", JSON.stringify(goalStorage) ?? []);
       }
-    }, 300);
+    }, 600);
   }, [tareas]);
 
   useEffect(() => {
@@ -108,14 +108,18 @@ function App() {
       } else {
         setTareas([]);
       }
-    }, 2000);
+    }, 600);
   }, []);
 
-  const handleNuevaTareaClick = () => {
-    setModal(true);
-    setTareaEditar({});
+// Funcion modal
+const handleNuevaTareaClick = () => {
+  setModal(true);
+  setTareaEditar({});
+  setAnimarModal(false);
+  setTimeout(() => {
     setAnimarModal(true);
-  };
+  }, 600);
+};
 
   const guardarTarea = (tarea) => {
     const fechaActual = Date.now();
@@ -136,7 +140,7 @@ function App() {
 
     setTimeout(() => {
       setModal(false);
-    }, 5000);
+    }, 600);
   };
 
   const eliminarTarea = (id) => {
@@ -199,7 +203,7 @@ function App() {
                       </main>
                     </>
                   )}
-                  {modal && (
+                  {modal && 
                     <Modal
                       setModal={setModal}
                       guardarTarea={guardarTarea}
@@ -208,7 +212,7 @@ function App() {
                       tareaEditar={tareaEditar}
                       setTareaEditar={setTareaEditar}
                     />
-                  )}
+                  }
                   <Exit />
                 </div>
               }

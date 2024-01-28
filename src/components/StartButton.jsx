@@ -10,10 +10,7 @@ const StartButton = () => {
 
   return (
     <div className='div-button'>
-      {/* <div className='portada'>
-        <h2>Whereas disregard and contempt for human rights have resulted</h2>
-      </div> */}
-
+   
       <button className='start-button' onClick={handleButtonClick}>
         Start
       </button>
