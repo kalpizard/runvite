@@ -11,7 +11,6 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
   };
 
   return (
-    
     <div className="listado-gastos contenedor">
       {Array.isArray(tareas) && tareas.length > 0 ? (
         <>
@@ -26,17 +25,10 @@ const ListadoTareas = ({ tareas, setTareaEditar, eliminarTarea }) => {
           ))}
         </>
       ) : (
-        <p className="no-hay">There are no tasks available.</p>
+        <p className="no-hay">No tasks available.</p>
       )}
     </div>
   );
 };
 
 export default ListadoTareas;
-
-
-
-
-
-
-

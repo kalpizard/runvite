@@ -45,6 +45,7 @@ function App() {
   };
 
   const [meta, setMeta] = useState(localStorage.getItem("meta") ?? "");
+  // cambio de pantalla si es valido, se pasa a el home
   const [isValidMeta, setIsValidMeta] = useState(false);
   const [currUser, setCurrUser] = useState(null);
   const [modal, setModal] = useState(false);
@@ -245,10 +246,10 @@ const handleNuevaTareaClick = () => {
                       setNombreUsuario={setNombreUsuario}
                       tareas={tareas}
                       setTareas={setTareas}
-                    />
+                   />
                     <Exit />
                   </h1>
-                </div>
+               </div>
               }
             />
           </Route>

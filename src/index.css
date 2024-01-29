@@ -54,13 +54,17 @@ header h1 {
 .gasto {
   margin-bottom: rem;
   width: 76%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Archivo Black", sans-serif;
+
 }
 
 .descripcion-gasto p,
 .descripcion-gasto .categoria,
 .descripcion-gasto .nombre-gasto,
 .descripcion-gasto .fecha-gasto {
-  font-size: 3.4rem;
+  font-size: 5.4rem;
 }
 
 .modal .formulario label,
@@ -284,7 +288,7 @@ header h1 {
 }
 
 .formulario input[type="submit"] {
-  background-color: #042a67;
+  background-color: #1048a4;
   border: none;
   padding: 1rem;
   text-align: center;
@@ -519,7 +523,7 @@ body .modal {
 
 .modal .formulario.animar {
   position: relative;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .modal .formulario.cerrar {
@@ -550,7 +554,7 @@ body .modal {
   
   .planifica {
   font-size: 40px;
-  font-family: "Archivo Black", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   
   background-image: url("/src/imgs/clouds1.avif");
   padding-bottom: 100px;
@@ -762,7 +766,7 @@ body .modal {
 
 
 
-  
+
 
 
 
@@ -868,43 +872,10 @@ header h1 {
 }
 
 .formulario label {
-  color: var(--azul);
+
   font-size: 2.8rem;
   text-align: center;
   margin-bottom: 2rem;
-}
-
-.formulario input[type="text"],
-.formulario input[type="number"] {
-  background-color: var(--gris-claro);
-  border-radius: 1rem;
-  padding: 1rem;
-  border: none;
-  flex: 1;
-  font-size: 1.6rem;
-}
-.formulario input[type="submit"] {
-  background-color: #1048a4;
-  border: none;
-  padding: 1rem;
-  text-align: center;
-  margin-top: 2rem;
-  color: var(--blanco);
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 1.9rem;
-  width: 100%;
-  transition: background-color 300ms ease;
-}
-@media (min-width: 768px) {
-  .formulario input[type="submit"] {
-      display: block;
-      padding: 1rem 5rem;
-  }
-}
-.formulario input[type="submit"]:hover {
-  background-color: #042a67;
-  cursor: pointer;
 }
 
 .formulario select {
@@ -1169,13 +1140,13 @@ body .modal {
 
 /*** SWIPE LIST OVERRIDES **/
 .swipe-action__leading {
-  background-color: var(--azul);
   color: var(--blanco);
+  background-color: #db2777;
   margin-bottom: 2rem;
 }
 
 .swipe-action__trailing {
-  background-color: #db2777;
+  background-color: var(--azul);
   margin-bottom: 2rem;
   color: var(--blanco);
 }
