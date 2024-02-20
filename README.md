@@ -1,6 +1,9 @@
 Este es un conjunto de archivos de código fuente relacionados con una aplicación web de planificación de metas y tareas. A continuación, se proporciona una descripción general de los archivos y su funcionalidad.
 
 Archivos Principales:
+r
+r
+
 
 1. App.js
    Descripción: El archivo principal que configura las rutas y componentes principales de la aplicación. Maneja la navegación entre diferentes secciones, como la página de inicio, estadísticas y opciones.
